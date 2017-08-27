@@ -53,7 +53,9 @@ class Node:
         self.children = []
         self.terminal = False
         self.actions = []
-        self.bet_sizing = []        
+        self.bet_sizing = []       
+
+        self.strategy = torch.Tensor([])
 
 class PokerTreeBuilder:
 

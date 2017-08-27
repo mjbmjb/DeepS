@@ -32,7 +32,7 @@ class card_tools:
             return out
         whole_hand = arguments.Tensor(board.size(0) + 1)
         #mjb the frount is the board cards
-        whole_hand[0:-1].copy(board)
+        whole_hand[0:-1].copy_(board)
         for card in range(game_settings.card_count): 
             whole_hand[-1] = card
             if self.hand_is_possible(whole_hand):

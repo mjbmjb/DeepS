@@ -35,26 +35,21 @@ class TreeVisualiser:
     # @param[opt] labels a list of labels for the elements of the tensor
     # @return a string representation of the tensor
     # @local
-#    def add_tensor(tensor, name, format, labels):
-#      
-#      out = ''
-#      if name:
-#        out = '| ' + name + ': '
-#      end
-#      
-#      if not format:
-#        format = "%.3f"
-#      end
-#    
-#      for i = 1,tensor:size(1):
+    def add_tensor(self, tensor, name, formatstr = '{:.2f}'):
+      
+      out = ''
+      if name != "":
+        out = '| ' + name + ': '
+    
+      for i in xrange(tensor.size(0)):
+        for j in xrange(tensor.size(1)):
 #        if labels:
 #          out = out + labels[i] + ":"
-#        end
-#        out = out + string.format(format, tensor[i]) + ", " 
-#      end
-#      
-#      return out
-#    end
+        
+            out = out + formatstr.format(tensor[i][j]) + ", "
+        out = out + "\n"
+      
+      return out
     
     # Generates a string representation of any range or value fields that are set
     # for the given tree node.
@@ -111,6 +106,10 @@ class TreeVisualiser:
           out['label'] = out['label'] + '| board: ' + card_to_string.cards_to_string(node.board)
           out['label'] = out['label'] + '| depth: ' + str(node.depth)
       
+        if node.strategy.size(0) > 0:
+          out['label'] = out['label'] + '| strategy: ' + self.add_tensor(node.strategy,"")
+          
+          
 #      if node.margin != None:
 #        out['label'] = out['label'] +  '| margin: ' + node.margin
 #    

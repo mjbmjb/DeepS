@@ -33,56 +33,51 @@ card_tools = card_tools()
 
 class StrategyFilling:
     # Constructor
-    def __init__():
+    def __init__(self):
+        return
     
     # Fills a chance node with the probability of each outcome.
     # @param node the chance node
     # @local
-    def _fill_chance(node):
+    def _fill_chance(self, node):
       assert(not node.terminal)
     
       #filling strategy
       #we will fill strategy with an uniform probability, but it has to be zero for hands that are not possible on
       #corresponding board
-      node['strategy'] = arguments.Tensor(#node['children'], game_settings.card_count):fill(0)
+      node.strategy = arguments.Tensor(len(node.children), game_settings.card_count).fill_(0)
       #setting probability of impossible hands to 0
-      for i in xrange(len(node['children'])):
-        child_node = node['children'][i]
-        mask = card_tools:get_possible_hand_indexes(child_node.board).byte()
-        node['strategy'][i].fill_(0)
+      for i in xrange(len(node.children)):
+        child_node = node.children[i]
+        mask = card_tools.get_possible_hand_indexes(child_node.board).byte()
+        node.strategy[i].fill_(0)
         #remove 2 because each player holds one card
-        node['strategy'][i][mask] = 1.0 / (game_settings.card_count - 2)
+        node.strategy[i][mask] = 1.0 / (game_settings.card_count - 2)
     
     # Fills a player node with a uniform strategy.
     # @param node the player node
     # @local
-    def _fill_uniformly(node)
+    def _fill_uniformly(self, node):
       assert(node.current_player == constants.players.P1 or node.current_player == constants.players.P2)
     
-      if(node.terminal) then
+      if(node.terminal):
         return
-      end
     
-      node.strategy = arguments.Tensor(#node['children'], game_settings.card_count):fill(1.0 / #node['children'])
-    end
+      node.strategy = arguments.Tensor(len(node.children), game_settings.card_count).fill_(1.0 / len(node.children))
     
     # Fills a node with a uniform strategy and recurses on the children.
     # @param node the node
     # @local
-    def _fill_uniform_dfs(node)
-      if node.current_player == constants.players.chance then
-        self:_fill_chance(node)
-      else
-        self:_fill_uniformly(node)
-      end
+    def _fill_uniform_dfs(self, node):
+      if node.current_player == constants.players.chance:
+        self._fill_chance(node)
+      else:
+        self._fill_uniformly(node)
     
-      for i=1,#node['children'] do
-        self:_fill_uniform_dfs(node['children'][i])
-      end
-    end
+      for i in xrange(len(node.children)):
+        self._fill_uniform_dfs(node.children[i])
     
     # Fills a public tree with a uniform strategy.
     # @param tree a public tree for Leduc Hold'em or variant
-    def fill_uniform(tree)
-      self:_fill_uniform_dfs(tree)
-    end
+    def fill_uniform(self, tree):
+      self._fill_uniform_dfs(tree)
