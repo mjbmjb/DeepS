@@ -40,7 +40,7 @@ def card_to_rank(card):
 # Holds the string representation for every possible card, indexed by its 
 # numeric representation.
 card_to_string_table = {}
-for card in xrange(game_settings.card_count): 
+for card in range(game_settings.card_count): 
   rank_name = rank_table[card_to_rank(card)]
   suit_name = suit_table[card_to_suit(card)]
   card_to_string_table[card] =  rank_name + suit_name
@@ -49,7 +49,7 @@ for card in xrange(game_settings.card_count):
 # Holds the numeric representation for every possible card, indexed by its 
 # string representation.
 string_to_card_table = {}
-for card in xrange(game_settings.card_count): 
+for card in range(game_settings.card_count): 
   string_to_card_table[card_to_string_table[card]] = card
 
  
@@ -69,7 +69,7 @@ def cards_to_string(cards):
     return ""
   
   out = ""
-  for card in xrange(cards.size(0)):
+  for card in range(cards.size(0)):
     out = out + card_to_string(cards[card])
   return out
 
@@ -96,12 +96,9 @@ def string_to_board(card_string):
  
   
   return arguments.Tensor([string_to_card(card_string)])
-
-def main():
-    print string_to_card("Ks")
-    print string_to_board("As")
+  
+def card_to_tensor(card):
     pass
     
-if __name__ == "__main__":
-    main()
+    
 

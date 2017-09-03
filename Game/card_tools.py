@@ -174,6 +174,16 @@ class card_tools:
         out.div(out.sum())
         return out
     
+    def hand_to_tensor(self, hand):
+        hand_tensor = arguments.Tensor(game_settings.card_count).fill_(0)
+        
+        if hand.dim() == 0:
+            return hand_tensor
+            
+        for card in hand:
+            hand_tensor[int(card)] = 1
+        return hand_tensor
+    
     def __init__(self):
         self._init_board_index_table()
     

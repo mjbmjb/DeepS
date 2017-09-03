@@ -52,14 +52,15 @@ net = '{nn.Linear(input_size, 50), nn.PReLU(), nn.Linear(50, output_size)}'
 # how often to save the model during training
 save_epoch = 1000
 # how many epochs to train for
-epoch_count = 10000
+epoch_count = 100
 # how many solved poker situations are generated for use as training examples
 train_data_count = 100
 # how many solved poker situations are generated for use as validation examples
 valid_data_count = 100
 # learning rate for neural net training
 learning_rate = 0.001
-
+#
+eta = 1.0
 
 assert(cfr_iters > cfr_skip_iters)
 if gpu:

@@ -4,7 +4,7 @@
 Created on Fri Aug 25 00:53:43 2017
 
 @author: mjb
-"""
+""" 
 
 # Fills a game's public tree with a uniform strategy. In particular, fills
 # the chance nodes with the probability of each outcome.

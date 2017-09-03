@@ -270,7 +270,6 @@ class PokerTreeBuilder:
     # bets for each player 
     # @return the root node of the built tree
     def build_tree(self, params):
-      print "enter build_tree"
       root = Node()
       #.current_player necessary stuff from the root_node not to touch the input
       root.street = params['root_node']['street']
@@ -293,3 +292,30 @@ class PokerTreeBuilder:
 #      strategy_filling.fill_uniform(root)
       
       return root
+
+    def statenode_to_tensor(self, state):
+#      tensor = arguments.Tensor(constants.player_count, \
+#                                constants.streets_count, \
+#                                constants.raises_count, \
+#                                constants.acions_count, \
+#                                constants.card_count * 2).fill_(0)
+      if (state == None):
+          return  torch.unsqueeze(torch.Tensor(20), 0)
+    
+      # transform street [0,1] means the first street
+      street_tensor = arguments.Tensor(constants.streets_count)
+      street_tensor[state.node.street - 1] = 1
+        
+      # transform #detpth# and bets
+      bets_tensor = state.node.bets / arguments.stack
+      
+      # transform hand(private and board)
+      assert(len(state.private) == 2)
+      private_tensor = card_tools.hand_to_tensor(state.private[state.node.current_player])
+      board_tensor = card_tools.hand_to_tensor(state.node.board)
+      
+      return  torch.unsqueeze(torch.cat((street_tensor, bets_tensor, private_tensor, board_tensor) , 0), 0)
+      
+     
+      
+      

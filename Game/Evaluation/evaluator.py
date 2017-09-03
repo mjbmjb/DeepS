@@ -14,8 +14,8 @@ Created on Sun Aug 20 18:55:01 2017
 # Hand strength is given as a numerical value, where a lower strength means
 # a stronger hand: high pair < low pair < high card < low card
 # @module evaluator
-import sys
-sys.path.append("/home/mjb/deepStack")
+
+import math
 import Settings.game_settings as game_settings
 import Game.card_to_string as card_to_string
 
@@ -24,7 +24,7 @@ card_tools = card_tools()
 
 import Settings.arguments as arguments
 
-class evaluator:
+class Evaluator:
     # Gives a strength representation for a hand containing two cards.
     # @param hand_ranks the rank of each card in the hand
     # @return the strength value of the hand
@@ -52,7 +52,7 @@ class evaluator:
             hand_value = hand_ranks[0] * game_settings.rank_count + hand_ranks[2]
         elif hand_ranks[1] == hand_ranks[2]: 
             #paired hand, value of the pair goes first, value of the kicker goes second
-            hand_value = hand_ranks[1] * game_settings.rank_count + hand_ranks[1]
+            hand_value = hand_ranks[1] * game_settings.rank_count + hand_ranks[0]
         else:
             #hand is a high card    
             hand_value = hand_ranks[0] * game_settings.rank_count * game_settings.rank_count + hand_ranks[1] * game_settings.rank_count + hand_ranks[2]   
@@ -72,7 +72,7 @@ class evaluator:
       
       #we are not interested in the hand suit - we will use ranks instead of cards
       hand_ranks = hand.clone()
-      for i in xrange(hand_ranks.size(0)): 
+      for i in range(hand_ranks.size(0)): 
         hand_ranks[i] = card_to_string.card_to_rank(hand_ranks[i])
       hand_ranks = hand_ranks.sort()
       if hand.size(0) == 2:
@@ -89,18 +89,18 @@ class evaluator:
     # on the board
     # @return a vector containing a strength value or `impossible_hand_value` for
     # every private hand
-    def batch_eval(self, board, impossible_hand_value):
+    def batch_eval(self, board, impossible_hand_value = -1):
 
         hand_values = arguments.Tensor(game_settings.card_count).fill_(-1)
         if board.dim() == 0: 
-            for hand in xrange(game_settings.card_count): 
+            for hand in range(game_settings.card_count): 
                 hand_values[hand] = math.floor((hand -1 ) / game_settings.suit_count ) + 1
         else:
             board_size = board.size(0)
             assert(board_size == 1 or board_size == 2)#, 'Incorrect board size for Leduc' )
             whole_hand = arguments.Tensor(board_size + 1)
             whole_hand[0:-1].copy_(board)
-            for card in xrange(game_settings.card_count): 
+            for card in range(game_settings.card_count): 
                 whole_hand[-1] = card; 
                 hand_values[card] = self.evaluate(whole_hand, impossible_hand_value)
         return hand_values
@@ -108,7 +108,7 @@ class evaluator:
 def main():
     import torch
     e = evaluator()
-    print e.batch_eval(torch.Tensor([1,2]),-1)
+    print (e.batch_eval(torch.Tensor([]),-1))
     
 
 if __name__ == "__main__":
