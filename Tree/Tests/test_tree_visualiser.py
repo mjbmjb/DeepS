@@ -27,7 +27,11 @@ params['root_node']['bets'] = arguments.Tensor([300, 300])
 params['limit_to_street'] = False
 tree = builder.build_tree(params)
 
+acc_list = []
+builder.acc_node(tree, acc_list)
+print(max(acc_list))
+print(builder.node_id_acc)
 
-visualiser = TreeVisualiser()
-
-visualiser.graphviz(tree, "simple_tree")
+#visualiser = TreeVisualiser()
+#
+#visualiser.graphviz(tree, "simple_tree")

@@ -15,7 +15,7 @@ torch.set_default_tensor_type('torch.FloatTensor')
 
 
 # whether to run on GPU
-gpu = False
+gpu = torch.cuda.is_available()
 # list of pot-scaled bet sizes to use in tree
 # @field bet_sizing
 bet_sizing = [1]
@@ -27,6 +27,7 @@ acpc_server_port = 20000
 streets_count = 2
 # the tensor datatype used for storing DeepStack's internal data
 Tensor = torch.FloatTensor
+LongTensor = torch.LongTensor
 # the directory for data files
 data_directory = 'Data/'
 # the size of the game's ante, in chips
@@ -52,7 +53,7 @@ net = '{nn.Linear(input_size, 50), nn.PReLU(), nn.Linear(50, output_size)}'
 # how often to save the model during training
 save_epoch = 1000
 # how many epochs to train for
-epoch_count = 100
+epoch_count = 1000
 # how many solved poker situations are generated for use as training examples
 train_data_count = 100
 # how many solved poker situations are generated for use as validation examples
@@ -60,11 +61,11 @@ valid_data_count = 100
 # learning rate for neural net training
 learning_rate = 0.001
 #
-eta = 1.0
+eta = 0.1
 
 assert(cfr_iters > cfr_skip_iters)
 if gpu:
-  import cutorch as torch
-  Tensor = torch.CudaTensor
+  Tensor = torch.cuda.FloatTensor
+  LongTensor = torch.cuda.LongTensor
 
 

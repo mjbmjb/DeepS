@@ -42,15 +42,16 @@ class Env:
         params['limit_to_street'] = False
         builder = PokerTreeBuilder()
         self.root_node = builder.build_tree(params)
+#        print(self.builder.node_id_acc)
         filling.fill_uniform(self.root_node)
         self.state = GameState()
         self._cached_terminal_equities = {}
         
     def reset(self):
         self.state = GameState()
-        pri_card = random_card_generator.generate_cards(constants.private_count * 2)
-        self.state.private.append(pri_card[0:constants.private_count])
-        self.state.private.append(pri_card[constants.private_count:])
+        pri_card = random_card_generator.generate_cards(game_settings.private_count * 2)
+        self.state.private.append(pri_card[0:game_settings.private_count])
+        self.state.private.append(pri_card[game_settings.private_count:])
         self.state.node = self.root_node
     
     #@return next_node, reward, terminal
@@ -82,7 +83,7 @@ class Env:
         next_state = GameState()
         next_state.node = next_node
         next_state.private = state.private
-        reward = next_node.bets[parent_node.current_player] - parent_node.bets[parent_node.current_player]
+        reward = parent_node.bets[parent_node.current_player] - next_node.bets[parent_node.current_player]
         terminal = False            
 
         return next_state, reward, terminal

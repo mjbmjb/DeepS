@@ -14,12 +14,13 @@ import Settings.arguments as arguments
 import torch
 
 
+
 class BetSizing:
     # Constructor
     # @param pot_fractions a list of fractions of the pot which are allowed 
     # as bets, sorted in ascending order
     def __init__(self, pot_fractions):
-      self.pot_fractions = pot_fractions if torch.equal(pot_fractions, torch.Tensor()) else torch.Tensor([1]) 
+      self.pot_fractions = pot_fractions if torch.equal(pot_fractions, arguments.Tensor()) else arguments.Tensor([1]) 
           
     
     # Gives the bets which are legal at a game state.
@@ -59,7 +60,7 @@ class BetSizing:
          pot = opponent_bet * 2
          used_bets_count = 0;
          #try all pot fractions bet and see if we can use them 
-         for i in xrange(self.pot_fractions.size(0)):
+         for i in range(self.pot_fractions.size(0)):
            raise_size = pot * self.pot_fractions[i]
            if raise_size >= min_raise_size and raise_size < max_raise_size:
              used_bets_count = used_bets_count + 1

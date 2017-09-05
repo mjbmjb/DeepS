@@ -17,7 +17,7 @@ class card_tools:
     def hand_is_possible(self, hand):
         assert(hand.min() >= 0 and hand.max() <= game_settings.card_count)
         used_cards = torch.FloatTensor(game_settings.card_count).fill_(0);
-        for i in xrange(hand.size(0)):
+        for i in range(hand.size(0)):
             used_cards[int(hand[i])] = used_cards[int(hand[i])] + 1
         return used_cards.max() < 2
     
@@ -137,7 +137,7 @@ class card_tools:
     # @
     def _init_board_index_table(self):
         if game_settings.board_card_count == 1:
-            self._board_index_table = torch.range(1, game_settings.card_count).float()
+            self._board_index_table = torch.arange(0, game_settings.card_count).float()
         elif game_settings.board_card_count == 2:
             self._board_index_table = arguments.Tensor(game_settings.card_count, game_settings.card_count).fill_(-1)
             board_idx = 0 

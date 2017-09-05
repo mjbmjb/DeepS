@@ -47,7 +47,7 @@ class StrategyFilling:
       #corresponding board
       node.strategy = arguments.Tensor(len(node.children), game_settings.card_count).fill_(0)
       #setting probability of impossible hands to 0
-      for i in xrange(len(node.children)):
+      for i in range(len(node.children)):
         child_node = node.children[i]
         mask = card_tools.get_possible_hand_indexes(child_node.board).byte()
         node.strategy[i].fill_(0)
@@ -74,7 +74,7 @@ class StrategyFilling:
       else:
         self._fill_uniformly(node)
     
-      for i in xrange(len(node.children)):
+      for i in range(len(node.children)):
         self._fill_uniform_dfs(node.children[i])
     
     # Fills a public tree with a uniform strategy.

@@ -47,21 +47,22 @@ class Node:
         self.street = -1
         self.board  = ""
         self.board_string = ""
-        self.bets = torch.Tensor(2)
+        self.bets = arguments.Tensor(2)
         self.pot = 0
         self.parent = Node
         self.children = []
         self.terminal = False
         self.actions = []
         self.bet_sizing = []       
-
-        self.strategy = torch.Tensor([])
+        self.node_id = 0
+        self.strategy = arguments.Tensor([])
 
 class PokerTreeBuilder:
 
     # Constructor
     def __init__(self):
-        pass
+        self.node_id_acc = 0
+    
     
     # Creates the child node after a call which transitions between betting 
     # rounds.
@@ -71,6 +72,9 @@ class PokerTreeBuilder:
     def _get_children_nodes_transition_call(self, parent_node):
     
       chance_node = Node()
+      self.node_id_acc = self.node_id_acc + 1
+      
+      chance_node.node_id = self.node_id_acc
       chance_node.node_type = constants.node_types.chance_node
       chance_node.street = parent_node.street
       chance_node.board= parent_node.board
@@ -97,12 +101,14 @@ class PokerTreeBuilder:
       children = []
       #mjb the chance node's child differ with the different board card 
       #1.0 iterate over the next possible boards to build the corresponding subtrees
-      for i in xrange(next_boards_count):
+      for i in range(next_boards_count):
         next_board = next_boards[i]
         next_board_string = card_to_string.cards_to_string(next_board)
     
         child = Node()
+        self.node_id_acc = self.node_id_acc + 1
     
+        child.node_id = self.node_id_acc
         child.node_type = constants.node_types.inner_node
         child.parent = parent_node
         child.current_player = constants.players.P1
@@ -133,6 +139,9 @@ class PokerTreeBuilder:
       
       #1.0 fold action
       fold_node = Node()
+      self.node_id_acc = self.node_id_acc + 1
+      
+      fold_node.node_id = self.node_id_acc
       fold_node.type = constants.node_types.terminal_fold
       fold_node.terminal = True
       fold_node.current_player = 1 - parent_node.current_player
@@ -145,6 +154,9 @@ class PokerTreeBuilder:
       #2.0 check action
       if parent_node.current_player == constants.players.P1 and (parent_node.bets[0] == parent_node.bets[1]):
         check_node = Node()
+        self.node_id_acc = self.node_id_acc + 1
+        
+        check_node.node_id = self.node_id_acc
         check_node.type = constants.node_types.check
         check_node.terminal = False
         check_node.current_player = 1 - parent_node.current_player
@@ -159,6 +171,9 @@ class PokerTreeBuilder:
                                            (parent_node.bets[0] != parent_node.bets[1] and \
                                             max(parent_node.bets) < arguments.stack) ):
         chance_node = Node()
+        self.node_id_acc = self.node_id_acc + 1
+        
+        chance_node.node_id = self.node_id_acc
         chance_node.node_type = constants.node_types.chance_node
         chance_node.street = parent_node.street
         chance_node.board = parent_node.board
@@ -169,6 +184,9 @@ class PokerTreeBuilder:
       else:
       #2.0 terminal call - either last street or allin
         terminal_call_node = Node()
+        self.node_id_acc = self.node_id_acc + 1
+        
+        terminal_call_node.node_id = self.node_id_acc
         terminal_call_node.type = constants.node_types.terminal_call
         terminal_call_node.terminal = True
         terminal_call_node.current_player = 1 - parent_node.current_player
@@ -184,8 +202,11 @@ class PokerTreeBuilder:
       if possible_bets.dim() != 0:
         assert(possible_bets.size(1) == 2)
         
-        for i in xrange(possible_bets.size(0)):
+        for i in range(possible_bets.size(0)):
           child = Node()
+          self.node_id_acc = self.node_id_acc + 1
+          
+          child.node_id = self.node_id_acc
           child.parent = parent_node
           child.current_player = 1 - parent_node.current_player
           child.street = parent_node.street 
@@ -278,7 +299,7 @@ class PokerTreeBuilder:
       root.board = params['root_node']['board'].clone()
       root.board_string = card_to_string.cards_to_string(root.board)
       
-      params['bet_sizing'] = params['bet_sizing'] if params.has_key('bet_sizing') else BetSizing(arguments.Tensor(arguments.bet_sizing))
+      params['bet_sizing'] = params['bet_sizing'] if 'bet_sizing' in params else BetSizing(arguments.Tensor(arguments.bet_sizing))
     
       assert(params['bet_sizing'])
     
@@ -300,7 +321,7 @@ class PokerTreeBuilder:
 #                                constants.acions_count, \
 #                                constants.card_count * 2).fill_(0)
       if (state == None):
-          return  torch.unsqueeze(torch.Tensor(20), 0)
+          return  torch.unsqueeze(arguments.Tensor(20), 0)
     
       # transform street [0,1] means the first street
       street_tensor = arguments.Tensor(constants.streets_count)
@@ -316,6 +337,14 @@ class PokerTreeBuilder:
       
       return  torch.unsqueeze(torch.cat((street_tensor, bets_tensor, private_tensor, board_tensor) , 0), 0)
       
-     
-      
-      
+    def acc_node(self, tree_root, acc_list):
+        acc_list.append(tree_root.node_id)
+        if tree_root.terminal:
+            return
+        for child in tree_root.children:
+            self.acc_node(child, acc_list)
+         
+         
+         
+         
+         

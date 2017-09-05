@@ -54,7 +54,7 @@ We'll also use the following from PyTorch:
 
 """
 
-import gym
+
 import math
 import random
 import numpy as np
@@ -72,7 +72,7 @@ from torch.autograd import Variable
 import torchvision.transforms as T
 
 
-env = gym.make('CartPole-v0').unwrapped
+
 
 # set up matplotlib
 is_ipython = 'inline' in matplotlib.get_backend()
@@ -212,11 +212,19 @@ class DQN(nn.Module):
         super(DQN, self).__init__()
         self.fc1 = nn.Linear(20, 40)
         self.fc1.weight.data.normal_(0, 0.1)
+        self.fc2 = nn.Linear(40,40)
+        self.fc2.weight.data.normal_(0, 0.1)
+        self.fc3 = nn.Linear(40,40)
+        self.fc3.weight.data.normal_(0, 0.1)
         self.out = nn.Linear(40, 4)
         self.out.weight.data.normal_(0, 0.1)
 
     def forward(self, x):
         x = self.fc1(x)
+        x = F.relu(x)
+        x = self.fc2(x)
+        x = F.relu(x)
+        x = self.fc3(x)
         x = F.relu(x)
         return self.out(x.view(x.size(0), -1))
 
@@ -269,6 +277,7 @@ class DQNOptim:
     
         self.plt = plt
     
+    # @return action LongTensor[[]]
     def select_action(self, state):
         sample = random.random()
         eps_threshold = self.EPS_END + (self.EPS_START - self.EPS_END) * \

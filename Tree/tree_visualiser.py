@@ -8,6 +8,7 @@ Created on Tue Aug 22 23:05:22 2017
 
 # Generates visual representations of game trees.
 # @classmod tree_visualiser
+import torch
 import Settings.game_settings as game_settings
 import Game.card_to_string as card_to_string
 import Settings.constants as constants
@@ -41,8 +42,8 @@ class TreeVisualiser:
       if name != "":
         out = '| ' + name + ': '
     
-      for i in xrange(tensor.size(0)):
-        for j in xrange(tensor.size(1)):
+      for i in range(tensor.size(0)):
+        for j in range(tensor.size(1)):
 #        if labels:
 #          out = out + labels[i] + ":"
         
@@ -106,7 +107,7 @@ class TreeVisualiser:
           out['label'] = out['label'] + '| board: ' + card_to_string.cards_to_string(node.board)
           out['label'] = out['label'] + '| depth: ' + str(node.depth)
       
-        if node.strategy.size(0) > 0:
+        if node.strategy.size() != torch.Size([]):
           out['label'] = out['label'] + '| strategy: ' + self.add_tensor(node.strategy,"")
           
           
@@ -158,7 +159,7 @@ class TreeVisualiser:
       
       #get the child id of the child node
       child_id = -1
-      for i in xrange(len(node.children)):
+      for i in range(len(node.children)):
           if node.children[i] is child_node:
               child_id = i
       
@@ -209,13 +210,13 @@ class TreeVisualiser:
       edges = []
       self.graphviz_dfs(root, nodes, edges)
         
-      for i in xrange(len(nodes)):
+      for i in range(len(nodes)):
         node = nodes[i]
         node_text = node['name'] + '[' + 'label=' + node['label'] + ' shape = ' + node['shape'] + '];'
           
         out = out + node_text
           
-      for i in xrange(len(edges)):
+      for i in range(len(edges)):
         edge = edges[i]
 #        edge_text = edge['id_from'] + ':f0 -> ' + edge['id_to'] + ':f0 [ id = ' + edge['id'] + ' label = "' + edge.strategy + '"];'
         edge_text = str(edge['id_from']) + ':f0 -> ' + str(edge['id_to']) + ':f0 [ id = ' + str(edge['id']) + ' label = "' + '"];'
