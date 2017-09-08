@@ -10,7 +10,6 @@ Created on Sun Aug 20 20:44:52 2017
 # @module card_to_string_conversion
 
 import sys
-sys.path.append("/home/mjb/deepStack")
 import Settings.game_settings as game_settings
 import Settings.arguments as arguments
 
@@ -26,14 +25,14 @@ rank_table = ['A', 'K', 'Q', 'J', 'T', '9', '8', '7', '6', '5', '4', '3', '2']
 # @param card the numeric representation of the card
 # @return the index of the suit
 def card_to_suit(card):
-  return card % game_settings.suit_count + 1
+  return card % game_settings.suit_count
 
 
 # Gets the rank of a card.
 # @param card the numeric representation of the card
 # @return the index of the rank
 def card_to_rank(card):
-  return int((card -1) / game_settings.suit_count ) + 1
+  return int((card -1) / game_settings.suit_count )
 
 
 

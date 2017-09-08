@@ -10,6 +10,8 @@ import sys
 sys.path.append('/home/mjb/Nutstore/deepStack/')
 
 import random
+import torch
+import numpy as np
 import Settings.arguments as arguments
 import Settings.constants as constants
 from itertools import count
@@ -44,13 +46,13 @@ def get_action(state, flag):
 # the notebook and run lot more epsiodes.
 
 time_start = 0
-@profile
+#@profile
 def main():
     import time
     time_start = time.time()
     total_reward = 0.0
     
-    for i_episode in range(arguments.epoch_count):
+    for i_episode in range(arguments.epoch_count + 1):
         # choose policy 0-sl 1-rl
         flag = 0 if random.random() > arguments.eta else 1
         
@@ -97,6 +99,20 @@ def main():
                 dqn_optim.episode_durations.append(t + 1)
 #                dqn_optim.plot_durations()
                 break
+            
+    # save the model
+    path = '../Data/Model/'
+    sl_name = path + "Iter:" + str(i_episode) + '.sl'
+    rl_name = path + "Iter:" + str(i_episode) + '.rl'
+    memory_name = path + 'Iter:' + str(i_episode)   
+    # save sl strategy
+    torch.save(table_sl.s_a_table, sl_name)
+    # save rl strategy
+    # 1.0 save the prarmeter
+    torch.save(dqn_optim.model.state_dict(), rl_name)
+    # 2.0 save the memory of DQN
+    np.save(memory_name, np.array(dqn_optim.memory.memory))
+            
             
     print('Complete')
     print((time.time() - time_start))

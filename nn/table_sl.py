@@ -21,7 +21,8 @@ class TableSL:
     # @return action LongTensor[[]]
     def select_action(self, state):
         #TODO count the num of node
-        state_id = int((state.node.node_id * 4 + state.private[state.node.current_player])[0])
+        #node id start from 1
+        state_id = int(((state.node.node_id - 1) * 8 + state.private[state.node.current_player])[0])
         policy = self.s_a_table[state_id,:] / self.s_a_table[state_id,:].sum()
 
         random_num = torch.rand(1)
@@ -31,7 +32,8 @@ class TableSL:
 
 
     def store(self, state, action):
-        state_id = int((state.node.node_id * 4 + state.private[state.node.current_player])[0])
+        #node id start from 1
+        state_id = int(((state.node.node_id - 1) * 8 + state.private[state.node.current_player])[0])
 #        print('state node id')
 #        print(state.node.node_id)
 #        print('state id')
