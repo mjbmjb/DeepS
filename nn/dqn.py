@@ -69,7 +69,7 @@ import torch.nn as nn
 import torch.optim as optim
 import torch.nn.functional as F
 from torch.autograd import Variable
-
+import torchvision.transforms as T
 
 
 
@@ -216,7 +216,7 @@ class DQN(nn.Module):
         self.fc2.weight.data.normal_(0, 0.1)
         self.fc3 = nn.Linear(40,40)
         self.fc3.weight.data.normal_(0, 0.1)
-        self.out = nn.Linear(40, 8)
+        self.out = nn.Linear(40, 4)
         self.out.weight.data.normal_(0, 0.1)
 
     def forward(self, x):

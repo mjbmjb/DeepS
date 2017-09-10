@@ -42,6 +42,7 @@ from Game.bet_sizing import BetSizing
 class Node:
     def __init__(self):
         self.current_player = -2
+        self.node_type = ""
         self.type = ""
         self.street = -1
         self.board  = ""
@@ -74,7 +75,7 @@ class PokerTreeBuilder:
       self.node_id_acc = self.node_id_acc + 1
       
       chance_node.node_id = self.node_id_acc
-      chance_node.type = constants.node_types.chance_node
+      chance_node.node_type = constants.node_types.chance_node
       chance_node.street = parent_node.street
       chance_node.board= parent_node.board
       chance_node.board_string = parent_node.board_string
@@ -108,7 +109,7 @@ class PokerTreeBuilder:
         self.node_id_acc = self.node_id_acc + 1
     
         child.node_id = self.node_id_acc
-        child.type = constants.node_types.inner_node
+        child.node_type = constants.node_types.inner_node
         child.parent = parent_node
         child.current_player = constants.players.P1
         child.street = parent_node.street + 1
@@ -173,7 +174,7 @@ class PokerTreeBuilder:
         self.node_id_acc = self.node_id_acc + 1
         
         chance_node.node_id = self.node_id_acc
-        chance_node.type = constants.node_types.chance_node
+        chance_node.node_type = constants.node_types.chance_node
         chance_node.street = parent_node.street
         chance_node.board = parent_node.board
         chance_node.board_string = parent_node.board_string
@@ -331,7 +332,7 @@ class PokerTreeBuilder:
       
       # transform hand(private and board)
       assert(len(state.private) == 2)
-      private_tensor = card_tools.hand_to_tensor(arguments.Tensor(state.private[state.node.current_player]))
+      private_tensor = card_tools.hand_to_tensor(state.private[state.node.current_player])
       board_tensor = card_tools.hand_to_tensor(state.node.board)
       
       return  torch.unsqueeze(torch.cat((street_tensor, bets_tensor, private_tensor, board_tensor) , 0), 0)

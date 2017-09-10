@@ -80,10 +80,6 @@ class Evaluator:
       elif hand.size(0) == 3:
 #        print hand_ranks
         return self.evaluate_three_card_hand(hand_ranks[0])
-        
-      elif hand.size(0) == 1:
-          # !!!!!!mjb  for all-in in the first round, only have one private card
-        return hand[0]
       else:
         assert(False)#, 'unsupported size of hand!' )
     

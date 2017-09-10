@@ -61,12 +61,12 @@ class Env:
             # TODO ternimal value
 #            terminal_value = 
             
-            return None, self._get_terminal_value(state), True
+            return None, parent_node.bets[parent_node.current_player] + 99, True
         # TODO grasp if action if invaild
         if action >= len(state.node.children):
             action = len(state.node.children) - 1
         
-#        assert (action < 4)
+        assert (action < 4)
         next_node = state.node.children[action]
         if next_node.current_player == constants.players.chance:
             rannum = random.random()
@@ -98,31 +98,27 @@ class Env:
 #        cached = self._cached_terminal_equities[node.board_string]
 #        return cached
 
-    # return vaule FloatTensor(2)
+
     def _get_terminal_value(self, state):
         node = state.node
-        assert(node.terminal)
+        assert(node.ternimal)
         value = arguments.Tensor(2).fill_(-1)
         value[node.current_player] = 1
-        if node.type == constants.node_types.terminal_fold:
+        if node.node_typee == constants.node_types.terminal_fold:
             #ternimal fold
             value.mul(node.bets[1 - node.current_player])
-        elif node.type == constants.node_types.terminal_call:
+        else:
             # show down
-            player_hand = arguments.Tensor(state.private[node.current_player].tolist() + node.board.tolist())
+            player_hand = self.private[node.current_player].tolist() + node.board.tolist()
             player_strength = evaluator.evaluate(player_hand, -1)
-            oppo_hand = arguments.Tensor(state.private[1 - node.current_player].tolist() + node.board.tolist())
+            oppo_hand = self.private[1 - node.current_player].tolist() + node.board.tolist()
             oppo_strength = evaluator.evaluate(oppo_hand, -1)
             
             if player_strength > oppo_strength:
                 value.mul(node.bets[1 - node.current_player])
             else:
                 value.mul(-node.bets[1 - node.current_player])
-        else:
-            assert(False)# not a vaild terminal node
-            
-        return value[state.node.current_player]
-            
+            return value
     def _al_action(self, state):
         
         # get possible bets in the node
