@@ -47,7 +47,7 @@ class actions:
 # @field ccall (check/call) "`ccall`"
 # @field raise "`raise`"
 class acpc_actions:
-    fold = "fold"
-    ccall = "ccall"
-    rraise = "raise"
+    fold = "f"
+    ccall = "c"
+    rraise = "r"
 

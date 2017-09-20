@@ -36,9 +36,9 @@ class Env:
         params = {}
         params['root_node'] = {}
         params['root_node']['board'] = card_to_string.string_to_board('')
-        params['root_node']['street'] = 1
+        params['root_node']['street'] = 0
         params['root_node']['current_player'] = constants.players.P1
-        params['root_node']['bets'] = arguments.Tensor([300, 300])
+        params['root_node']['bets'] = arguments.Tensor([100, 100])
         params['limit_to_street'] = False
         builder = PokerTreeBuilder()
         self.root_node = builder.build_tree(params)
@@ -53,40 +53,82 @@ class Env:
         self.state.private.append(pri_card[0:game_settings.private_count])
         self.state.private.append(pri_card[game_settings.private_count:])
         self.state.node = self.root_node
+        
+        
+    def _chance_next(self, this_node, state):
+        rannum = random.random()
+        hand_id = int(state.private[this_node.current_player][0])
+        chance_strategy = this_node.strategy[:,hand_id]
+        for i in range(len(chance_strategy)):
+            if rannum <= sum(chance_strategy[0: i+1]):
+                return this_node.children[i]
+                
     
     #@return next_node, reward, terminal
-    def step(self, state, action):
+    def step(self, agent, state, action):
         parent_node = state.node
-        if parent_node.terminal:
-            # TODO ternimal value
-#            terminal_value = 
-            
-            return None, parent_node.bets[parent_node.current_player] + 99, True
+        
         # TODO grasp if action if invaild
         if action >= len(state.node.children):
             action = len(state.node.children) - 1
-        
-        assert (action < 4)
+        # fold in first round is invaild
+        if action == 0 and parent_node.bets[0] == 100 and parent_node.bets[1] == 100:
+            action = 1
+
+#        assert (action < 4)
         next_node = state.node.children[action]
         if next_node.current_player == constants.players.chance:
-            rannum = random.random()
-            hand_id = int(state.private[parent_node.current_player][0])
-            chance_strategy = parent_node.strategy[:,hand_id]
-            for i in range(len(chance_strategy)):
-                if rannum <= sum(chance_strategy[0: i+1]):
-                    next_node = parent_node.children[i]
-                    break
-        
+            next_node = self._chance_next(next_node, state)
+                
     #    next_state reward
-
-       
         next_state = GameState()
         next_state.node = next_node
         next_state.private = state.private
         reward = parent_node.bets[parent_node.current_player] - next_node.bets[parent_node.current_player]
-        terminal = False            
+        # if we choose to reach the terminal we should observe the ternimal value    
+        terminal = False
+        
+        real_next_node = None
+        
+        # we should not forget the small and big bind
+        if parent_node.node_id == 0:
+            reward = reward - parent_node.bets[parent_node.current_player]
+    
+        if next_node.terminal:
+            reward = reward + self._get_terminal_value(next_state)
+            terminal = True
+            next_state = None
+            real_next_state = None
 
-        return next_state, reward, terminal
+        else:
+            next_state_tensor = builder.statenode_to_tensor(next_state)
+            oppo_action = int((agent.sl.select_action(next_state) if random.random() > arguments.eta \
+                          else agent.rl.select_action(next_state_tensor))[0][0])   
+            if oppo_action >= len(next_node.children):
+                oppo_action = len(next_node.children) - 1
+            real_next_node = next_node.children[oppo_action]
+
+            if real_next_node.current_player == constants.players.chance:
+                real_next_node = self._chance_next(real_next_node, state)                
+
+            assert(real_next_node != None)
+            real_next_state = GameState()
+            real_next_state.node = real_next_node
+            real_next_state.private = state.private
+            if real_next_node.terminal:
+                reward = reward + self._get_terminal_value(real_next_state)
+                real_next_state = None
+            
+
+            
+#        print(parent_node.node_id)
+#        print(next_node.node_id)
+#        if real_next_node:
+#            print(real_next_node.node_id)
+#        else:
+#            print('None')
+#        print(reward)
+        return next_state, real_next_state, reward, terminal
                            
         #[0,1,1,1] means the second action
         
@@ -98,27 +140,58 @@ class Env:
 #        cached = self._cached_terminal_equities[node.board_string]
 #        return cached
 
+#    # return vaule FloatTensor(2)
+#    def _get_terminal_value(self, state):
+#        node = state.node
+#        assert(node.terminal)
+#
+#        if node.type == constants.node_types.terminal_fold:
+#            #ternimal fold
+#            value = - node.bets[node.current_player]
+#        elif node.type == constants.node_types.terminal_call:
+#            # show down
+#            player_hand = arguments.Tensor(state.private[node.current_player].tolist() + node.board.tolist())
+#            player_strength = evaluator.evaluate(player_hand, -1)
+#            oppo_hand = arguments.Tensor(state.private[1 - node.current_player].tolist() + node.board.tolist())
+#            oppo_strength = evaluator.evaluate(oppo_hand, -1)
+#            
+#            if player_strength < oppo_strength:
+#                value = node.bets[1 - node.current_player]
+#            else:
+#                value = -node.bets[node.current_player]
+#        else:
+#            assert(False)# not a vaild terminal node
+#            
+#        return value
 
+
+        # return vaule FloatTensor(2)
     def _get_terminal_value(self, state):
+        # oppo take the action and lead to this terminal node 
+        
         node = state.node
-        assert(node.ternimal)
-        value = arguments.Tensor(2).fill_(-1)
-        value[node.current_player] = 1
-        if node.node_typee == constants.node_types.terminal_fold:
+        assert(node.terminal)
+
+        if node.type == constants.node_types.terminal_fold:
             #ternimal fold
-            value.mul(node.bets[1 - node.current_player])
-        else:
+            value = node.bets.sum()
+        elif node.type == constants.node_types.terminal_call:
             # show down
-            player_hand = self.private[node.current_player].tolist() + node.board.tolist()
+            player_hand = arguments.Tensor(state.private[node.current_player].tolist() + node.board.tolist())
             player_strength = evaluator.evaluate(player_hand, -1)
-            oppo_hand = self.private[1 - node.current_player].tolist() + node.board.tolist()
+            oppo_hand = arguments.Tensor(state.private[1 - node.current_player].tolist() + node.board.tolist())
             oppo_strength = evaluator.evaluate(oppo_hand, -1)
             
-            if player_strength > oppo_strength:
-                value.mul(node.bets[1 - node.current_player])
+            # the one take call lose
+            if player_strength < oppo_strength:
+                value = 0
             else:
-                value.mul(-node.bets[1 - node.current_player])
-            return value
+                value = node.bets.sum()
+        else:
+            assert(False)# not a vaild terminal node
+            
+        return value
+            
     def _al_action(self, state):
         
         # get possible bets in the node

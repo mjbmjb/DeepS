@@ -1,1 +1,6 @@
 *.pyc
+*.sl
+*.rl
+*.lprof
+*.pdf
+*.npy

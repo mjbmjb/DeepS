@@ -30,7 +30,7 @@ Created on Tue Aug 22 01:30:35 2017
 import torch
 import Settings.game_settings as game_settings
 import Game.card_to_string as card_to_string
-
+from Game.Evaluation.evaluator import Evaluator
 from Game.card_tools import card_tools
 card_tools = card_tools()
 
@@ -42,7 +42,6 @@ from Game.bet_sizing import BetSizing
 class Node:
     def __init__(self):
         self.current_player = -2
-        self.node_type = ""
         self.type = ""
         self.street = -1
         self.board  = ""
@@ -56,7 +55,10 @@ class Node:
         self.bet_sizing = []       
         self.node_id = 0
         self.strategy = arguments.Tensor([])
-
+        
+        self.table = arguments.Tensor([])
+        self.rl = arguments.Tensor([])
+        
 class PokerTreeBuilder:
 
     # Constructor
@@ -75,7 +77,7 @@ class PokerTreeBuilder:
       self.node_id_acc = self.node_id_acc + 1
       
       chance_node.node_id = self.node_id_acc
-      chance_node.node_type = constants.node_types.chance_node
+      chance_node.type = constants.node_types.chance_node
       chance_node.street = parent_node.street
       chance_node.board= parent_node.board
       chance_node.board_string = parent_node.board_string
@@ -109,7 +111,7 @@ class PokerTreeBuilder:
         self.node_id_acc = self.node_id_acc + 1
     
         child.node_id = self.node_id_acc
-        child.node_type = constants.node_types.inner_node
+        child.type = constants.node_types.inner_node
         child.parent = parent_node
         child.current_player = constants.players.P1
         child.street = parent_node.street + 1
@@ -166,7 +168,7 @@ class PokerTreeBuilder:
         check_node.bets = parent_node.bets.clone()
         children.append(check_node)
       #transition call
-      elif parent_node.street == 1 and ( (parent_node.current_player == constants.players.P2 and \
+      elif parent_node.street == 0 and ( (parent_node.current_player == constants.players.P2 and \
                                             parent_node.bets[0] == parent_node.bets[1]) or \
                                            (parent_node.bets[0] != parent_node.bets[1] and \
                                             max(parent_node.bets) < arguments.stack) ):
@@ -174,7 +176,7 @@ class PokerTreeBuilder:
         self.node_id_acc = self.node_id_acc + 1
         
         chance_node.node_id = self.node_id_acc
-        chance_node.node_type = constants.node_types.chance_node
+        chance_node.type = constants.node_types.chance_node
         chance_node.street = parent_node.street
         chance_node.board = parent_node.board
         chance_node.board_string = parent_node.board_string
@@ -321,21 +323,47 @@ class PokerTreeBuilder:
 #                                constants.acions_count, \
 #                                constants.card_count * 2).fill_(0)
       if (state == None):
-          return  torch.unsqueeze(arguments.Tensor(20), 0)
+          return None
+      node = state.node
     
       # transform street [0,1] means the first street
-      street_tensor = arguments.Tensor(constants.streets_count)
-      street_tensor[state.node.street - 1] = 1
-        
+      street_tensor = arguments.Tensor(constants.streets_count).fill_(0)
+      street_tensor[int(node.street)] = 1
+      
+      #position_tensor
+      position_tensor = arguments.Tensor([node.current_player])
+      
+                    
       # transform #detpth# and bets
-      bets_tensor = state.node.bets / arguments.stack
+      bet_player_tensor = arguments.Tensor(arguments.bet_bucket).fill_(0)
+      bet_player_tensor[int((node.bets[node.current_player]-1) / arguments.bet_bucket_len)] = 1
+      bet_oppo_tensor = arguments.Tensor(arguments.bet_bucket).fill_(0)                 
+      bet_oppo_tensor[int((node.bets[1-node.current_player]-1) / arguments.bet_bucket_len)] = 1
+#      print(node.bets)
+#      print(bet_player_tensor)
+#      print(bet_oppo_tensor)
+            
       
       # transform hand(private and board)
       assert(len(state.private) == 2)
-      private_tensor = card_tools.hand_to_tensor(state.private[state.node.current_player])
-      board_tensor = card_tools.hand_to_tensor(state.node.board)
+      private_tensor = card_tools.hand_to_tensor(arguments.Tensor(state.private[node.current_player]))
+      board_tensor = card_tools.hand_to_tensor(node.board)
       
-      return  torch.unsqueeze(torch.cat((street_tensor, bets_tensor, private_tensor, board_tensor) , 0), 0)
+      #transform hand strengen
+      player_hand = arguments.Tensor(state.private[node.current_player].tolist() + node.board.tolist())
+      evaluator = Evaluator()
+      player_strength = evaluator.evaluate(player_hand, -1)
+      strength_tensor = arguments.Tensor([player_strength])
+      
+      # street: 1-2 position 3 bets 4-5 private 
+      return_tensor = torch.unsqueeze(torch.cat((street_tensor, position_tensor,
+                                         bet_player_tensor, bet_oppo_tensor, private_tensor, board_tensor,
+                                         strength_tensor) , 0), 0)
+#      print("private:" + str(state.private[node.current_player]))
+#      print("board:" + node.board_string)
+      
+#      print(return_tensor)
+      return return_tensor
       
     def acc_node(self, tree_root, acc_list):
         acc_list.append(tree_root.node_id)

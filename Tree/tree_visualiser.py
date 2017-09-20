@@ -48,9 +48,26 @@ class TreeVisualiser:
 #          out = out + labels[i] + ":"
         
             out = out + formatstr.format(tensor[i][j]) + ", "
-        out = out + "\n"
+        out = out + "| : "
       
       return out
+      
+    def add_list(self, input_list, name, formatstr = '{:.2f}'):
+      
+      out = ''
+      if name != "":
+        out = '| ' + name + ': '
+    
+      for i in range(len(input_list)):
+        for j in range(len(input_list[i])):
+#        if labels:
+#          out = out + labels[i] + ":"
+        
+            out = out + formatstr.format(input_list[i][j]) + ", "
+        out = out + "| : "
+      
+      return out
+      
     
     # Generates a string representation of any range or value fields that are set
     # for the given tree node.
@@ -90,7 +107,7 @@ class TreeVisualiser:
       out = {}
       
       #1.0 label
-      out['label'] = '"<f0>' + str(node.current_player)
+      out['label'] = '"<f0>' + str(node.current_player) + '|<f1>' + str(node.node_id)
       
       if node.terminal:
         if node.type == constants.node_types.terminal_fold:
@@ -107,9 +124,12 @@ class TreeVisualiser:
           out['label'] = out['label'] + '| board: ' + card_to_string.cards_to_string(node.board)
           out['label'] = out['label'] + '| depth: ' + str(node.depth)
       
-        if node.strategy.size() != torch.Size([]):
-          out['label'] = out['label'] + '| strategy: ' + self.add_tensor(node.strategy,"")
+        if node.table.dim() != 0:
+          out['label'] = out['label'] + '| sl: ' + self.add_list(node.table,"")
           
+        if node.rl.dim() != 0:
+          out['label'] = out['label'] + '| rl: ' + self.add_tensor(node.rl,"")
+#          
           
 #      if node.margin != None:
 #        out['label'] = out['label'] +  '| margin: ' + node.margin
@@ -233,5 +253,5 @@ class TreeVisualiser:
       src = Source(out)
 #      src.view()
       #run graphviz program to generate image
-      src.render('dot ' + arguments.data_directory + 'Dot/' + filename , view=True)
+      src.render('dot ' + arguments.data_directory  + filename , view=True)
      

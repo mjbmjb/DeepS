@@ -10,6 +10,8 @@ Created on Sun Aug 20 00:50:31 2017
 # @module arguments
 
 import torch
+import torch.nn as nn
+import torch.nn.functional as F
 
 torch.set_default_tensor_type('torch.FloatTensor')
 
@@ -50,10 +52,13 @@ model_path = '../Data/Models/PotBet/'
 value_net_name = 'final'
 # the neural net architecture
 net = '{nn.Linear(input_size, 50), nn.PReLU(), nn.Linear(50, output_size)}'
+loss_F = F.nll_loss
+loss = nn.MSELoss()
+
 # how often to save the model during training
 save_epoch = 1000
 # how many epochs to train for
-epoch_count = 1000
+epoch_count = 100000
 # how many solved poker situations are generated for use as training examples
 train_data_count = 100
 # how many solved poker situations are generated for use as validation examples
@@ -62,6 +67,16 @@ valid_data_count = 100
 learning_rate = 0.001
 #
 eta = 0.1
+
+#load model
+load_model = False
+load_model_num = 100000
+
+muilt_gpu = False
+
+bet_bucket = 6
+bet_bucket_len = stack / bet_bucket
+
 
 assert(cfr_iters > cfr_skip_iters)
 if gpu:

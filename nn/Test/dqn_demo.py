@@ -1,4 +1,10 @@
+#!/usr/bin/env python2
 # -*- coding: utf-8 -*-
+"""
+Created on Tue Sep 12 23:07:33 2017
+
+@author: mjb
+"""
 
 # -*- coding: utf-8 -*-
 """

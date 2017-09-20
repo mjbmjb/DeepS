@@ -66,11 +66,11 @@ from PIL import Image
 
 import torch
 import torch.nn as nn
-import torch.optim as optim
 import torch.nn.functional as F
+import torch.optim as optim
 from torch.autograd import Variable
-import torchvision.transforms as T
 
+import Settings.arguments as arguments
 
 
 
@@ -210,22 +210,23 @@ class DQN(nn.Module):
 
     def __init__(self):
         super(DQN, self).__init__()
-        self.fc1 = nn.Linear(20, 40)
-        self.fc1.weight.data.normal_(0, 0.1)
-        self.fc2 = nn.Linear(40,40)
-        self.fc2.weight.data.normal_(0, 0.1)
-        self.fc3 = nn.Linear(40,40)
-        self.fc3.weight.data.normal_(0, 0.1)
-        self.out = nn.Linear(40, 4)
-        self.out.weight.data.normal_(0, 0.1)
+        self.fc1 = nn.Linear(28, 64)
+        self.fc1.weight.data.normal_(0, 0.01)
+        self.fc2 = nn.Linear(64,128)
+        self.fc2.weight.data.normal_(0, 0.01)
+#        self.fc3 = nn.Linear(64,32)
+#        self.fc3.weight.data.normal_(0, 0.01)
+        self.out = nn.Linear(128, 5)
+        self.out.weight.data.normal_(0, 0.01)
 
     def forward(self, x):
         x = self.fc1(x)
-        x = F.relu(x)
+        x = F.tanh(x)
         x = self.fc2(x)
-        x = F.relu(x)
-        x = self.fc3(x)
-        x = F.relu(x)
+        x = F.tanh(x)
+#        x = F.sigmoid(x)
+#        x = self.fc3(x)
+#        x = F.sigmoid(x)
         return self.out(x.view(x.size(0), -1))
 
 
@@ -259,23 +260,35 @@ class DQNOptim:
         
         self.BATCH_SIZE = 128
         self.GAMMA = 0.999
-        self.EPS_START = 0.9
-        self.EPS_END = 0.05
+        self.EPS_START = 0.06
+        self.EPS_END = 0.00
         self.EPS_DECAY = 200
         
         self.model = DQN()
+        self.target_net = DQN()
         
         if use_cuda:
             self.model.cuda()
-        
-        self.optimizer = optim.RMSprop(self.model.parameters())
-        self.memory = ReplayMemory(10000)
+            self.target_net.cuda()
+            
+        if arguments.muilt_gpu:
+            self.model = nn.DataParallel(self.model)
+            self.target_net = nn.DataParallel(self.target_net)
+            
+            
+        self.optimizer = optim.ASGD(self.model.parameters(),lr=0.001)
+        self.memory = ReplayMemory(2000000)
         
         
         self.steps_done = 0
         self.episode_durations = []
+        self.error_acc = []
     
         self.plt = plt
+        
+        self.viz = None
+        self.win = None
+        self.current_sum = 0.1
     
     # @return action LongTensor[[]]
     def select_action(self, state):
@@ -285,32 +298,50 @@ class DQNOptim:
         self.steps_done += 1
         if sample > eps_threshold:
             return self.model(
-                Variable(state, volatile=True)).data.max(1)[1].view(1, 1)
+                Variable(state)).data.max(1)[1].view(1, 1)
         else:
             return LongTensor([[random.randrange(4)]])
     
     
     
     
-    def plot_durations(self):
+    def plot_error(self):
         self.plt.figure(2)
         self.plt.clf()
-        durations_t = torch.FloatTensor(self.episode_durations)
+        error_acc_t = torch.FloatTensor(self.error_acc)
         self.plt.title('Training...')
         self.plt.xlabel('Episode')
-        self.plt.ylabel('Duration')
-        self.plt.plot(durations_t.numpy())
+        self.plt.ylabel('error')
+        self.plt.plot(error_acc_t.numpy())
         # Take 100 episode averages and plot them too
-        if len(durations_t) >= 100:
-            means = durations_t.unfold(0, 100, 1).mean(1).view(-1)
-            means = torch.cat((torch.zeros(99), means))
-            self.plt.plot(means.numpy())
+#        if len(durations_t) >= 100:
+#            means = durations_t.unfold(0, 100, 1).mean(1).view(-1)
+#            means = torch.cat((torch.zeros(99), means))
+#            self.plt.plot(means.numpy())
     
         self.plt.pause(0.001)  # pause a bit so that plots are updated
         if is_ipython:
             display.clear_output(wait=True)
 #            display.display(self.plt.gcf()
     
+    def plot_error_vis(self, step):
+        if not self.viz:
+            import visdom
+            self.viz = visdom.Visdom()
+            self.win = self.viz.line(X=np.array([self.steps_done]),
+                                     Y=np.array([self.current_sum]))
+        if step % 10000 == 0:
+            self.viz.updateTrace(
+                 X=np.array([self.steps_done]),
+                 Y=np.array([self.current_sum]),
+                 win=self.win)
+        else:
+            self.viz.line(
+                 X=np.array([self.steps_done]),
+                 Y=np.array([self.current_sum]),
+                 win=self.win,
+                 update='append')
+        
     
     ######################################################################
     # Training loop
@@ -328,7 +359,7 @@ class DQNOptim:
     
     last_sync = 0
     
-    
+#    @profile
     def optimize_model(self):
         global last_sync
         if len(self.memory) < self.BATCH_SIZE:
@@ -358,7 +389,7 @@ class DQNOptim:
     
         # Compute V(s_{t+1}) for all next states.
         next_state_values = Variable(torch.zeros(self.BATCH_SIZE).type(Tensor))
-        next_state_values[non_final_mask] = self.model(non_final_next_states).max(1)[0]
+        next_state_values[non_final_mask] = self.target_net(non_final_next_states).max(1)[0]
         # Now, we don't want to mess up the loss with a volatile flag, so let's
         # clear it. After this, we'll just end up with a Variable that has
         # requires_grad=False
@@ -366,9 +397,20 @@ class DQNOptim:
         # Compute the expected Q values
         expected_state_action_values = (next_state_values * self.GAMMA) + reward_batch
     
-        # Compute Huber loss
-        loss = F.smooth_l1_loss(state_action_values, expected_state_action_values)
-    
+#        # Compute Huber loss
+#        loss = arguments.loss_F(state_action_values, expected_state_action_values)
+
+        loss = arguments.loss(state_action_values, expected_state_action_values)
+        
+#        print(len(loss.data))
+     
+#        self.error_acc.append(loss.data.sum())
+#        self.current_sum = (self.steps_done / (self.steps_done + 1.0)) * self.current_sum + loss.data[0]/(self.steps_done + 1)
+#        print(self.steps_done)
+#        print(self.current_sum)
+#        self.current_sum = loss.data[0]
+#        print(self.current_sum)
+
         # Optimize the model
         self.optimizer.zero_grad()
         loss.backward()
