@@ -35,8 +35,8 @@ class Env:
     def __init__(self):
         params = {}
         params['root_node'] = {}
-        params['root_node']['board'] = card_to_string.string_to_board('')
-        params['root_node']['street'] = 0
+        params['root_node']['board'] = card_to_string.string_to_board('As')
+        params['root_node']['street'] = 1
         params['root_node']['current_player'] = constants.players.P1
         params['root_node']['bets'] = arguments.Tensor([100, 100])
         params['limit_to_street'] = False

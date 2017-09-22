@@ -42,6 +42,18 @@ def load_model(dqn_optim, iter_time):
     # load sl model
     table_sl.s_a_table = torch.load('../Data/Model/Iter:' + iter_str + '.sl')
 
+def save_model(episod):
+    path = '../Data/Model/'
+    sl_name = path + "Iter:" + str(episod) + '.sl'
+    rl_name = path + "Iter:" + str(episod) + '.rl'
+    memory_name = path + 'Iter:' + str(episod)   
+    # save sl strategy
+    torch.save(table_sl.s_a_table, sl_name)
+    # save rl strategy
+    # 1.0 save the prarmeter
+    torch.save(dqn_optim.model.state_dict(), rl_name)
+    # 2.0 save the memory of DQN
+    np.save(memory_name, np.array(dqn_optim.memory.memory))
 
 
 def get_action(state, flag):
@@ -49,6 +61,7 @@ def get_action(state, flag):
     action = table_sl.select_action(state) if flag == 0 else dqn_optim.select_action(state)
     return action
 
+    
 
 ######################################################################
 #
@@ -123,8 +136,12 @@ def main():
             if done:
 #                if(i_episode % 100 == 0):
 #                    dqn_optim.plot_error()
+                if(i_episode % arguments.save_epoch == 0):
+                    save_model(i_episode)
+                    
 #                dqn_optim.episode_durations.append(t + 1)
 #                dqn_optim.plot_durations()
+
                 break
             
             
@@ -134,17 +151,6 @@ def main():
     # save the model
     if arguments.load_model:
         i_episode = i_episode + arguments.load_model_num
-    path = '../Data/Model/'
-    sl_name = path + "Iter:" + str(i_episode) + '.sl'
-    rl_name = path + "Iter:" + str(i_episode) + '.rl'
-    memory_name = path + 'Iter:' + str(i_episode)   
-    # save sl strategy
-    torch.save(table_sl.s_a_table, sl_name)
-    # save rl strategy
-    # 1.0 save the prarmeter
-    torch.save(dqn_optim.model.state_dict(), rl_name)
-    # 2.0 save the memory of DQN
-    np.save(memory_name, np.array(dqn_optim.memory.memory))
             
             
     print('Complete')

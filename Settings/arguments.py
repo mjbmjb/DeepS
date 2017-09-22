@@ -56,7 +56,7 @@ loss_F = F.nll_loss
 loss = nn.MSELoss()
 
 # how often to save the model during training
-save_epoch = 1000
+save_epoch = 10000
 # how many epochs to train for
 epoch_count = 100000
 # how many solved poker situations are generated for use as training examples

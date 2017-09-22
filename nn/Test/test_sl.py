@@ -33,6 +33,7 @@ def dfs_fill_table(node, table, dqnmodel, builder):
             
     # sl
     all_table = table[node.node_id,:,:]
+#    print(node.node_id)
     for i in range(all_table.size(0)):
         all_table[i,:] = all_table[i,:] / all_table[i,:].sum()
     

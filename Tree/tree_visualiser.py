@@ -76,28 +76,22 @@ class TreeVisualiser:
     # stored in the `ranges_absolute`, `cf_values`, or `cf_values_br` fields of
     # the node.
     # @local
-#    def add_range_info(node)   
-#      out = ""
-#      
-#      if(node.ranges_absolute): 
-#        out = out + self.add_tensor(node.ranges_absolute[1], 'abs_range1')
-#        out = out + self.add_tensor(node.ranges_absolute[2], 'abs_range2')
-#      end
-#    
-#      if(node.cf_values):
-#        #cf values computed by real tree dfs
-#        out = out + self.add_tensor(node.cf_values[1], 'cf_values1')
-#        out = out + self.add_tensor(node.cf_values[2], 'cf_values2')
-#      end
-#      
-#      if(node.cf_values_br):
-#        #cf values that br has in real tree
-#        out = out + self.add_tensor(node.cf_values_br[1], 'cf_values_br1')
-#        out = out + self.add_tensor(node.cf_values_br[2], 'cf_values_br2')
-#      end
-#      
-#      return out
-#    end
+    def add_range_info(self, node):
+      out = ""
+      
+      if(node.ranges_absolute.dim() != 0): 
+        out = out + self.add_tensor(node.ranges_absolute, 'abs_range')
+    
+      if(node.cf_values.dim() != 0):
+        #cf values computed by real tree dfs
+        out = out + self.add_tensor(node.cf_values, 'cf_values')
+
+      if(node.cf_values_br.dim() != 0):
+        #cf values that br has in real tree
+        out = out + self.add_tensor(node.cf_values_br, 'cf_values_br')
+
+      
+      return out
     
     # Generates data for a graphical representation of a node in a public tree.
     # @param node the node to generate data for
@@ -127,14 +121,14 @@ class TreeVisualiser:
         if node.table.dim() != 0:
           out['label'] = out['label'] + '| sl: ' + self.add_list(node.table,"")
           
-        if node.rl.dim() != 0:
-          out['label'] = out['label'] + '| rl: ' + self.add_tensor(node.rl,"")
+#        if node.rl.dim() != 0:
+#          out['label'] = out['label'] + '| rl: ' + self.add_tensor(node.rl,"")
 #          
           
 #      if node.margin != None:
 #        out['label'] = out['label'] +  '| margin: ' + node.margin
-#    
-##      out['label'] = out['label'] + self.add_range_info(node)  
+    
+      out['label'] = out['label'] + self.add_range_info(node)  
 #      
 #      if node.cfv_infset != None:
 #        out['label'] = out['label'] +  '| cfv1: ' + node.cfv_infset[1]

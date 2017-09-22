@@ -15,7 +15,7 @@ import Settings.arguments as arguments
 import Settings.constants as constants
 import Settings.game_settings as game_settings
 from Game.card_tools import card_tools
-from Game.Evaluation.evaluator import evaluator
+from Game.Evaluation.evaluator import Evaluator
 
 card_tools = card_tools()
 
@@ -36,16 +36,16 @@ class TerminalEquity:
     def get_last_round_call_matrix(self, board_cards, call_matrix):
       assert(board_cards.size(0) == 1 or board_cards.size(0) == 2)#, 'Only Leduc and extended Leduc are now supported' )
       
-      e = evaluator()
+      e = Evaluator()
       strength = e.batch_eval(board_cards)
       #handling hand stregths (winning probs);
-      strength_view_1 = strength.view(game_settings.card_count, 1).expandAs(call_matrix)
-      strength_view_2 = strength.view(1, game_settings.card_count).expandAs(call_matrix)
+      strength_view_1 = strength.view(game_settings.card_count, 1).expand_as(call_matrix)
+      strength_view_2 = strength.view(1, game_settings.card_count).expand_as(call_matrix)
       
       #mjb greater is 1
-      call_matrix.copy(torch.gt(strength_view_1, strength_view_2))
+      call_matrix.copy_(torch.gt(strength_view_1, strength_view_2))
       #mjb lower is -1
-      call_matrix.sub(torch.lt(strength_view_1, strength_view_2).typeAs(call_matrix))
+      call_matrix.sub(torch.lt(strength_view_1, strength_view_2).type_as(call_matrix))
     
       self._handle_blocking_cards(call_matrix, board_cards)
     
@@ -58,9 +58,9 @@ class TerminalEquity:
     # @local
     def _handle_blocking_cards(self, equity_matrix, board):
       possible_hand_indexes = card_tools.get_possible_hand_indexes(board)
-      possible_hand_matrix = possible_hand_indexes.view(1, game_settings.card_count).expandAs(equity_matrix)
+      possible_hand_matrix = possible_hand_indexes.view(1, game_settings.card_count).expand_as(equity_matrix)
       equity_matrix.mul(possible_hand_matrix)
-      possible_hand_matrix = possible_hand_indexes.view(game_settings.card_count,1).expandAs(equity_matrix)
+      possible_hand_matrix = possible_hand_indexes.view(game_settings.card_count,1).expand_as(equity_matrix)
       equity_matrix.mul(possible_hand_matrix)
     
     # Sets the evaluator's fold matrix, which gives the equity for terminal
@@ -72,9 +72,9 @@ class TerminalEquity:
     # @local
     def _set_fold_matrix(self, board):
       self.fold_matrix = arguments.Tensor(game_settings.card_count, game_settings.card_count)
-      self.fold_matrix.fill(1)
+      self.fold_matrix.fill_(1)
       #setting cards that block each other to zero - exactly elements on diagonal in leduc variants
-      self.fold_matrix.sub(torch.eye(game_settings.card_count).typeAs(self.fold_matrix))
+      self.fold_matrix.sub(torch.eye(game_settings.card_count).type_as(self.fold_matrix))
       self._handle_blocking_cards(self.fold_matrix, board)
     
     # Sets the evaluator's call matrix, which gives the equity for terminal
@@ -90,12 +90,12 @@ class TerminalEquity:
     # @local
     def _set_call_matrix(self, board):
       street = card_tools.board_to_street(board)
-      self.equity_matrix = arguments.Tensor(game_settings.card_count, game_settings.card_count).zero()
+      self.equity_matrix = arguments.Tensor(game_settings.card_count, game_settings.card_count).zero_()
       
-      if street == 1:
+      if street == 0:
         #iterate through all possible next round streetss
         next_round_boards = card_tools.get_second_round_boards()
-        boards_count = next_round_boardsl.size(0)
+        boards_count = next_round_boards.size(0)
         next_round_equity_matrix = arguments.Tensor(game_settings.card_count, game_settings.card_count)
         for board in range(boards_count):
           self.get_last_round_call_matrix(next_round_boards[board], next_round_equity_matrix)
@@ -103,12 +103,12 @@ class TerminalEquity:
         #averaging the values in the call matrix
         weight_constant = game_settings.board_card_count == 1 and 1/(game_settings.card_count -2) or 2/((game_settings.card_count -2) * (game_settings.card_count -3 ))
         self.equity_matrix.mul(weight_constant)
-      elif  street == 2:
+      elif  street == 1:
         #for last round we just return the matrix
         self.get_last_round_call_matrix(board, self.equity_matrix)
       else:
         #impossible street
-        assert(false)#, 'impossible street');
+        assert(False)#, 'impossible street');
     
     # Sets the board cards for the evaluator and creates its internal data structures.
     # @param board a possibly empty vector of board cards
@@ -125,7 +125,7 @@ class TerminalEquity:
     # and K is the range size
     # @param result a NxK tensor in which to save the cfvs
     def call_value(self, ranges, result ):
-      result.mm(ranges, self.equity_matrix)
+      result.add_(ranges.mm(self.equity_matrix))
     
     # Computes (a batch of) counterfactual values that a player achieves at a terminal node
     # where a player has folded.
@@ -137,7 +137,7 @@ class TerminalEquity:
     # @param result A NxK tensor in which to save the cfvs. Positive cfvs are returned, and
     # must be negated if the player in question folded.
     def fold_value(self, ranges, result ):
-      result.mm(ranges, self.fold_matrix)
+      result.add_(ranges.mm(self.fold_matrix))
     
     # Returns the matrix which gives showdown equity for any ranges.
     # 

@@ -83,10 +83,10 @@ class card_tools:
     # @param board a possibly empty vector of board cards
     # @return `true` if the range puts 0 probability on invalid hands and has
     # total probability 
-    def is_valid_range(self, range, board):
-        check = range.clone()
-        only_possible_hands = range.clone().cmul(self.get_impossible_hand_indexes(board)).sum() == 0
-        sums_to_one = math.abs(1.0 - range.sum()) < 0.0001
+    def is_valid_range(self, ranges, board):
+        check = ranges.clone()
+        only_possible_hands = ranges.clone().cmul(self.get_impossible_hand_indexes(board)).sum() == 0
+        sums_to_one = math.abs(1.0 - ranges.sum()) < 0.0001
         return only_possible_hands and sums_to_one
     
     # Gives the current betting round based on a board vector.
@@ -94,9 +94,9 @@ class card_tools:
     # @return the current betting round
     def board_to_street(self, board):
         if board.dim() == 0:
-            return 1
+            return 0
         else:
-            return 2
+            return 1
     
     
     # Gives all possible sets of board cards for the game.
