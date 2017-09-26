@@ -13,11 +13,11 @@ import Settings.game_settings as game_settings
 
 class TableSL:
     def __init__(self):
-        # TODO count the num of node 652
-        self.s_a_table = arguments.Tensor(34, game_settings.card_count * game_settings.private_count,\
-                                     game_settings.actions_count).fill_(10)
-        self.s_a_table[:,:,0:2].fill_(1)
-    
+        # TODO count the num of node 858
+        self.s_a_table = arguments.Tensor(858, game_settings.card_count * game_settings.private_count,\
+                                     game_settings.actions_count).fill_(2)
+        self.s_a_table[:,:,0:1].fill_(1)
+        self.update_counter = 0
     
     # @return action LongTensor[[]]
     def select_action(self, state):
@@ -34,6 +34,9 @@ class TableSL:
 
 
     def store(self, state, action):
+#        self.update_counter = self.update_counter + 1
+#        print(self.s_a_table.max(0))
+        
         #node id start from 1
         state_id = int(state.node.node_id - 1)
         hand_id = int(state.private[state.node.current_player][0])
@@ -43,4 +46,6 @@ class TableSL:
 #        print(state_id)
 #        print('self')
         action_id = action[0][0]
+#        print(hand_id)
+#        print(self.s_a_table[state_id])
         self.s_a_table[state_id][hand_id][action_id] = self.s_a_table[state_id][hand_id][action_id]  + 1

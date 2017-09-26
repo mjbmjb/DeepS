@@ -210,7 +210,7 @@ class DQN(nn.Module):
 
     def __init__(self):
         super(DQN, self).__init__()
-        self.fc1 = nn.Linear(28, 64)
+        self.fc1 = nn.Linear(32, 64)
         self.fc1.weight.data.normal_(0, 0.01)
         self.fc2 = nn.Linear(64,128)
         self.fc2.weight.data.normal_(0, 0.01)
@@ -405,7 +405,7 @@ class DQNOptim:
 #        print(len(loss.data))
      
 #        self.error_acc.append(loss.data.sum())
-#        self.current_sum = (self.steps_done / (self.steps_done + 1.0)) * self.current_sum + loss.data[0]/(self.steps_done + 1)
+        self.current_sum = (self.steps_done / (self.steps_done + 1.0)) * self.current_sum + loss.data[0]/(self.steps_done + 1)
 #        print(self.steps_done)
 #        print(self.current_sum)
 #        self.current_sum = loss.data[0]

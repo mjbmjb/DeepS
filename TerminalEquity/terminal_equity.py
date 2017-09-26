@@ -45,7 +45,7 @@ class TerminalEquity:
       #mjb greater is 1
       call_matrix.copy_(torch.gt(strength_view_1, strength_view_2))
       #mjb lower is -1
-      call_matrix.sub(torch.lt(strength_view_1, strength_view_2).type_as(call_matrix))
+      call_matrix.sub_(torch.lt(strength_view_1, strength_view_2).type_as(call_matrix))
     
       self._handle_blocking_cards(call_matrix, board_cards)
     
@@ -61,7 +61,7 @@ class TerminalEquity:
       possible_hand_matrix = possible_hand_indexes.view(1, game_settings.card_count).expand_as(equity_matrix)
       equity_matrix.mul(possible_hand_matrix)
       possible_hand_matrix = possible_hand_indexes.view(game_settings.card_count,1).expand_as(equity_matrix)
-      equity_matrix.mul(possible_hand_matrix)
+      equity_matrix.mul_(possible_hand_matrix)
     
     # Sets the evaluator's fold matrix, which gives the equity for terminal
     # nodes where one player has folded.
@@ -74,7 +74,7 @@ class TerminalEquity:
       self.fold_matrix = arguments.Tensor(game_settings.card_count, game_settings.card_count)
       self.fold_matrix.fill_(1)
       #setting cards that block each other to zero - exactly elements on diagonal in leduc variants
-      self.fold_matrix.sub(torch.eye(game_settings.card_count).type_as(self.fold_matrix))
+      self.fold_matrix.sub_(torch.eye(game_settings.card_count).type_as(self.fold_matrix))
       self._handle_blocking_cards(self.fold_matrix, board)
     
     # Sets the evaluator's call matrix, which gives the equity for terminal
@@ -99,10 +99,10 @@ class TerminalEquity:
         next_round_equity_matrix = arguments.Tensor(game_settings.card_count, game_settings.card_count)
         for board in range(boards_count):
           self.get_last_round_call_matrix(next_round_boards[board], next_round_equity_matrix)
-          self.equity_matrix.add(next_round_equity_matrix)
+          self.equity_matrix.add_(next_round_equity_matrix)
         #averaging the values in the call matrix
         weight_constant = game_settings.board_card_count == 1 and 1/(game_settings.card_count -2) or 2/((game_settings.card_count -2) * (game_settings.card_count -3 ))
-        self.equity_matrix.mul(weight_constant)
+        self.equity_matrix.mul_(weight_constant)
       elif  street == 1:
         #for last round we just return the matrix
         self.get_last_round_call_matrix(board, self.equity_matrix)
@@ -170,10 +170,10 @@ class TerminalEquity:
     # @param ranges a 2xK tensor containing ranges for each player (where K is the range size)
     # @param result a 2xK tensor in which to store the cfvs for each player
     # @param folding_player which player folded
-    def tree_node_fold_value(self, ranges, result, folding_player ):
+    def tree_node_fold_value(self, ranges, result, folding_player):
       assert(ranges.dim() == 2)
       assert(result.dim() == 2)
       self.fold_value(ranges[0].view(1,  -1), result[1].view(1,  -1)) 
       self.fold_value(ranges[1].view(1,  -1), result[0].view(1,  -1))
       
-      result[folding_player].mul(-1)
+      result[folding_player].mul_(-1)

@@ -35,8 +35,8 @@ class Env:
     def __init__(self):
         params = {}
         params['root_node'] = {}
-        params['root_node']['board'] = card_to_string.string_to_board('As')
-        params['root_node']['street'] = 1
+        params['root_node']['board'] = card_to_string.string_to_board('')
+        params['root_node']['street'] = 0
         params['root_node']['current_player'] = constants.players.P1
         params['root_node']['bets'] = arguments.Tensor([100, 100])
         params['limit_to_street'] = False
@@ -90,20 +90,20 @@ class Env:
         
         real_next_node = None
         
-        # we should not forget the small and big bind
-        if parent_node.node_id == 0:
-            reward = reward - parent_node.bets[parent_node.current_player]
-    
+        #if chance node and the acting player is player 0 (who is act first at every round)
+        if next_node.current_player == parent_node.current_player:
+            return next_state, next_state, reward, terminal
         if next_node.terminal:
-            reward = reward + self._get_terminal_value(next_state)
+            reward = reward + self._get_terminal_value(next_state, parent_node.current_player)
             terminal = True
             next_state = None
             real_next_state = None
 
         else:
-            next_state_tensor = builder.statenode_to_tensor(next_state)
-            oppo_action = int((agent.sl.select_action(next_state) if random.random() > arguments.eta \
-                          else agent.rl.select_action(next_state_tensor))[0][0])   
+#            next_state_tensor = builder.statenode_to_tensor(next_state)
+#            oppo_action = int((agent.sl.select_action(next_state) if random.random() > arguments.eta \
+#                          else agent.rl.select_action(next_state_tensor))[0][0])
+            oppo_action = int(agent.sl.select_action(next_state)[0][0])  
             if oppo_action >= len(next_node.children):
                 oppo_action = len(next_node.children) - 1
             real_next_node = next_node.children[oppo_action]
@@ -116,7 +116,7 @@ class Env:
             real_next_state.node = real_next_node
             real_next_state.private = state.private
             if real_next_node.terminal:
-                reward = reward + self._get_terminal_value(real_next_state)
+                reward = reward + self._get_terminal_value(real_next_state, parent_node.current_player)
                 real_next_state = None
             
 
@@ -128,6 +128,7 @@ class Env:
 #        else:
 #            print('None')
 #        print(reward)
+        self.process_log(state, action, reward)
         return next_state, real_next_state, reward, terminal
                            
         #[0,1,1,1] means the second action
@@ -166,15 +167,17 @@ class Env:
 
 
         # return vaule FloatTensor(2)
-    def _get_terminal_value(self, state):
+    def _get_terminal_value(self, state, player):
         # oppo take the action and lead to this terminal node 
         
         node = state.node
         assert(node.terminal)
-
+        value = arguments.Tensor([0,0])
+        
         if node.type == constants.node_types.terminal_fold:
-            #ternimal fold
-            value = node.bets.sum()
+        #ternimal fold   
+            value[node.current_player] = node.bets.sum()
+
         elif node.type == constants.node_types.terminal_call:
             # show down
             player_hand = arguments.Tensor(state.private[node.current_player].tolist() + node.board.tolist())
@@ -184,13 +187,13 @@ class Env:
             
             # the one take call lose
             if player_strength < oppo_strength:
-                value = 0
+                value[node.current_player] = node.bets.sum()
             else:
-                value = node.bets.sum()
+                value[1-node.current_player] = node.bets.sum()
         else:
             assert(False)# not a vaild terminal node
             
-        return value
+        return value[player]
             
     def _al_action(self, state):
         
@@ -208,4 +211,12 @@ class Env:
         return action
     
         
-        
+    def process_log(self, state, action, reward):
+        node = state.node
+        with open('state_action.log','a') as fout:
+            fout.write('player: ' + str(node.current_player) + '\n' +
+                       'private, public cards: ' + str(state.private[0][0]) +','+str(state.private[1][0])+ node.board_string + '\n' +
+                       'bets: ' + str(node.bets[0]) + ',' + str(node.bets[1]) + '\n' 
+                       'actions: ' + str(action) + '\n'
+                       'rewards:' + str(reward) + '\n\n')
+            

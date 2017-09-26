@@ -1,0 +1,4668 @@
+player: 0
+private, public cards: 7.0,3.0
+bets: 100.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 1
+private, public cards: 7.0,3.0
+bets: 1200.0,100.0
+actions: 1
+rewards:1300.0
+
+player: 0
+private, public cards: 3.0,2.0
+bets: 100.0,100.0
+actions: 2
+rewards:-200.0
+
+player: 1
+private, public cards: 3.0,2.0
+bets: 300.0,100.0
+actions: 2
+rewards:400.0
+
+player: 0
+private, public cards: 3.0,2.0
+bets: 300.0,900.0
+actions: 2
+rewards:-900.0
+
+player: 1
+private, public cards: 3.0,2.0
+bets: 1200.0,900.0
+actions: 0
+rewards:0.0
+
+player: 0
+private, public cards: 7.0,4.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 7.0,4.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 0
+private, public cards: 7.0,4.0As
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 7.0,4.0As
+bets: 100.0,100.0
+actions: 1
+rewards:200.0
+
+player: 0
+private, public cards: 0.0,7.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 0.0,7.0
+bets: 100.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 0
+private, public cards: 0.0,7.0
+bets: 100.0,1200.0
+actions: 1
+rewards:1300.0
+
+player: 0
+private, public cards: 1.0,0.0
+bets: 100.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 1
+private, public cards: 1.0,0.0
+bets: 1200.0,100.0
+actions: 1
+rewards:1300.0
+
+player: 0
+private, public cards: 4.0,1.0
+bets: 100.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 1
+private, public cards: 4.0,1.0
+bets: 1200.0,100.0
+actions: 1
+rewards:1300.0
+
+player: 0
+private, public cards: 1.0,7.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 1
+private, public cards: 1.0,7.0
+bets: 1200.0,100.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 2.0,1.0
+bets: 100.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 1
+private, public cards: 2.0,1.0
+bets: 1200.0,100.0
+actions: 1
+rewards:1300.0
+
+player: 0
+private, public cards: 5.0,3.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 5.0,3.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 0
+private, public cards: 5.0,3.0Kh
+bets: 100.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 1
+private, public cards: 5.0,3.0Kh
+bets: 1200.0,100.0
+actions: 1
+rewards:1300.0
+
+player: 0
+private, public cards: 5.0,4.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 5.0,4.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 0
+private, public cards: 5.0,4.0
+bets: 100.0,1200.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 1.0,3.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 1
+private, public cards: 1.0,3.0
+bets: 1200.0,100.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 3.0,1.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 3.0,1.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 0
+private, public cards: 3.0,1.0Kh
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 3.0,1.0Kh
+bets: 100.0,100.0
+actions: 1
+rewards:200.0
+
+player: 0
+private, public cards: 4.0,1.0
+bets: 100.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 1
+private, public cards: 4.0,1.0
+bets: 1200.0,100.0
+actions: 1
+rewards:1300.0
+
+player: 0
+private, public cards: 0.0,1.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 1
+private, public cards: 0.0,1.0
+bets: 1200.0,100.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 7.0,6.0
+bets: 100.0,100.0
+actions: 3
+rewards:200.0
+
+player: 1
+private, public cards: 7.0,6.0
+bets: 1200.0,100.0
+actions: 1
+rewards:1300.0
+
+player: 0
+private, public cards: 4.0,0.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 4.0,0.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 0
+private, public cards: 4.0,0.0Ah
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 4.0,0.0Ah
+bets: 100.0,100.0
+actions: 1
+rewards:200.0
+
+player: 0
+private, public cards: 1.0,5.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 1
+private, public cards: 1.0,5.0
+bets: 1200.0,100.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 3.0,4.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 3.0,4.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 0
+private, public cards: 3.0,4.0Jh
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 3.0,4.0Jh
+bets: 100.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 0
+private, public cards: 3.0,4.0Jh
+bets: 100.0,1200.0
+actions: 1
+rewards:1300.0
+
+player: 0
+private, public cards: 4.0,5.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 4.0,5.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 0
+private, public cards: 4.0,5.0Ks
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 4.0,5.0Ks
+bets: 100.0,100.0
+actions: 1
+rewards:200.0
+
+player: 0
+private, public cards: 4.0,7.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 1
+private, public cards: 4.0,7.0
+bets: 1200.0,100.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 6.0,4.0
+bets: 100.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 1
+private, public cards: 6.0,4.0
+bets: 1200.0,100.0
+actions: 1
+rewards:1300.0
+
+player: 0
+private, public cards: 1.0,7.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 1.0,7.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 0
+private, public cards: 1.0,7.0Kh
+bets: 100.0,100.0
+actions: 2
+rewards:-200.0
+
+player: 1
+private, public cards: 1.0,7.0Kh
+bets: 300.0,100.0
+actions: 1
+rewards:-200.0
+
+player: 0
+private, public cards: 5.0,6.0
+bets: 100.0,100.0
+actions: 2
+rewards:-200.0
+
+player: 1
+private, public cards: 5.0,6.0
+bets: 300.0,100.0
+actions: 1
+rewards:-200.0
+
+player: 0
+private, public cards: 5.0,6.0Jh
+bets: 300.0,300.0
+actions: 3
+rewards:-900.0
+
+player: 1
+private, public cards: 5.0,6.0Jh
+bets: 1200.0,300.0
+actions: 0
+rewards:0.0
+
+player: 0
+private, public cards: 3.0,2.0
+bets: 100.0,100.0
+actions: 2
+rewards:-200.0
+
+player: 1
+private, public cards: 3.0,2.0
+bets: 300.0,100.0
+actions: 1
+rewards:-200.0
+
+player: 0
+private, public cards: 3.0,2.0Ah
+bets: 300.0,300.0
+actions: 0
+rewards:0.0
+
+player: 0
+private, public cards: 1.0,5.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 1
+private, public cards: 1.0,5.0
+bets: 1200.0,100.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 6.0,3.0
+bets: 100.0,100.0
+actions: 2
+rewards:-200.0
+
+player: 1
+private, public cards: 6.0,3.0
+bets: 300.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 0
+private, public cards: 6.0,3.0
+bets: 300.0,1200.0
+actions: 1
+rewards:-900.0
+
+player: 0
+private, public cards: 1.0,2.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 1.0,2.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 0
+private, public cards: 1.0,2.0Jh
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 1.0,2.0Jh
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 0
+private, public cards: 6.0,4.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 6.0,4.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 0
+private, public cards: 6.0,4.0Qs
+bets: 100.0,100.0
+actions: 2
+rewards:-200.0
+
+player: 1
+private, public cards: 6.0,4.0Qs
+bets: 300.0,100.0
+actions: 2
+rewards:1000.0
+
+player: 0
+private, public cards: 6.0,4.0Qs
+bets: 300.0,900.0
+actions: 1
+rewards:-600.0
+
+player: 0
+private, public cards: 2.0,4.0
+bets: 100.0,100.0
+actions: 2
+rewards:-200.0
+
+player: 1
+private, public cards: 2.0,4.0
+bets: 300.0,100.0
+actions: 2
+rewards:400.0
+
+player: 0
+private, public cards: 2.0,4.0
+bets: 300.0,900.0
+actions: 2
+rewards:1500.0
+
+player: 1
+private, public cards: 2.0,4.0
+bets: 1200.0,900.0
+actions: 1
+rewards:-300.0
+
+player: 0
+private, public cards: 1.0,7.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 1.0,7.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 0
+private, public cards: 1.0,7.0Jh
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 1.0,7.0Jh
+bets: 100.0,100.0
+actions: 1
+rewards:200.0
+
+player: 0
+private, public cards: 5.0,3.0
+bets: 100.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 1
+private, public cards: 5.0,3.0
+bets: 1200.0,100.0
+actions: 1
+rewards:1300.0
+
+player: 0
+private, public cards: 1.0,0.0
+bets: 100.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 1
+private, public cards: 1.0,0.0
+bets: 1200.0,100.0
+actions: 1
+rewards:1300.0
+
+player: 0
+private, public cards: 5.0,0.0
+bets: 100.0,100.0
+actions: 2
+rewards:-200.0
+
+player: 1
+private, public cards: 5.0,0.0
+bets: 300.0,100.0
+actions: 2
+rewards:-800.0
+
+player: 0
+private, public cards: 5.0,0.0Qh
+bets: 900.0,900.0
+actions: 2
+rewards:1800.0
+
+player: 1
+private, public cards: 5.0,0.0Qh
+bets: 1200.0,900.0
+actions: 1
+rewards:2100.0
+
+player: 0
+private, public cards: 7.0,4.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 7.0,4.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 0
+private, public cards: 7.0,4.0Kh
+bets: 100.0,100.0
+actions: 1
+rewards:200.0
+
+player: 1
+private, public cards: 7.0,4.0Kh
+bets: 100.0,100.0
+actions: 1
+rewards:200.0
+
+player: 0
+private, public cards: 6.0,4.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 6.0,4.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 0
+private, public cards: 6.0,4.0
+bets: 100.0,1200.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 1.0,7.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 1.0,7.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 0
+private, public cards: 1.0,7.0Ah
+bets: 100.0,100.0
+actions: 2
+rewards:400.0
+
+player: 1
+private, public cards: 1.0,7.0Ah
+bets: 300.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 0
+private, public cards: 1.0,7.0Ah
+bets: 300.0,1200.0
+actions: 1
+rewards:1500.0
+
+player: 0
+private, public cards: 6.0,4.0
+bets: 100.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 1
+private, public cards: 6.0,4.0
+bets: 1200.0,100.0
+actions: 1
+rewards:1300.0
+
+player: 0
+private, public cards: 2.0,5.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 2.0,5.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 0
+private, public cards: 2.0,5.0Jh
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 2.0,5.0Jh
+bets: 100.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 0
+private, public cards: 2.0,5.0Jh
+bets: 100.0,1200.0
+actions: 0
+rewards:0.0
+
+player: 0
+private, public cards: 2.0,0.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 2.0,0.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 0
+private, public cards: 2.0,0.0Qs
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 2.0,0.0Qs
+bets: 100.0,100.0
+actions: 1
+rewards:200.0
+
+player: 0
+private, public cards: 4.0,3.0
+bets: 100.0,100.0
+actions: 2
+rewards:-200.0
+
+player: 1
+private, public cards: 4.0,3.0
+bets: 300.0,100.0
+actions: 1
+rewards:-200.0
+
+player: 0
+private, public cards: 4.0,3.0Jh
+bets: 300.0,300.0
+actions: 3
+rewards:-900.0
+
+player: 1
+private, public cards: 4.0,3.0Jh
+bets: 1200.0,300.0
+actions: 1
+rewards:1500.0
+
+player: 0
+private, public cards: 1.0,4.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 1
+private, public cards: 1.0,4.0
+bets: 1200.0,100.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 3.0,7.0
+bets: 100.0,100.0
+actions: 2
+rewards:-200.0
+
+player: 1
+private, public cards: 3.0,7.0
+bets: 300.0,100.0
+actions: 1
+rewards:-200.0
+
+player: 0
+private, public cards: 3.0,7.0Kh
+bets: 300.0,300.0
+actions: 3
+rewards:1500.0
+
+player: 1
+private, public cards: 3.0,7.0Kh
+bets: 1200.0,300.0
+actions: 1
+rewards:-900.0
+
+player: 0
+private, public cards: 4.0,3.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 4.0,3.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 0
+private, public cards: 4.0,3.0Jh
+bets: 100.0,100.0
+actions: 1
+rewards:200.0
+
+player: 1
+private, public cards: 4.0,3.0Jh
+bets: 100.0,100.0
+actions: 1
+rewards:200.0
+
+player: 0
+private, public cards: 2.0,3.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 2.0,3.0
+bets: 100.0,100.0
+actions: 2
+rewards:-200.0
+
+player: 0
+private, public cards: 2.0,3.0
+bets: 100.0,300.0
+actions: 2
+rewards:-800.0
+
+player: 1
+private, public cards: 2.0,3.0
+bets: 900.0,300.0
+actions: 2
+rewards:1200.0
+
+player: 0
+private, public cards: 2.0,3.0
+bets: 900.0,1200.0
+actions: 1
+rewards:2100.0
+
+player: 0
+private, public cards: 2.0,3.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 1
+private, public cards: 2.0,3.0
+bets: 1200.0,100.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 7.0,0.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 7.0,0.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 0
+private, public cards: 7.0,0.0Ks
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 7.0,0.0Ks
+bets: 100.0,100.0
+actions: 2
+rewards:400.0
+
+player: 0
+private, public cards: 7.0,0.0Ks
+bets: 100.0,300.0
+actions: 3
+rewards:-1100.0
+
+player: 1
+private, public cards: 7.0,0.0Ks
+bets: 1200.0,300.0
+actions: 1
+rewards:1500.0
+
+player: 0
+private, public cards: 5.0,1.0
+bets: 100.0,100.0
+actions: 2
+rewards:-200.0
+
+player: 1
+private, public cards: 5.0,1.0
+bets: 300.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 0
+private, public cards: 5.0,1.0
+bets: 300.0,1200.0
+actions: 1
+rewards:-900.0
+
+player: 0
+private, public cards: 1.0,4.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 1.0,4.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 0
+private, public cards: 1.0,4.0Kh
+bets: 100.0,100.0
+actions: 2
+rewards:-200.0
+
+player: 1
+private, public cards: 1.0,4.0Kh
+bets: 300.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 0
+private, public cards: 1.0,4.0Kh
+bets: 300.0,1200.0
+actions: 1
+rewards:1500.0
+
+player: 0
+private, public cards: 4.0,6.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 1
+private, public cards: 4.0,6.0
+bets: 1200.0,100.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 2.0,4.0
+bets: 100.0,100.0
+actions: 1
+rewards:200.0
+
+player: 1
+private, public cards: 2.0,4.0
+bets: 100.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 0
+private, public cards: 2.0,4.0
+bets: 100.0,1200.0
+actions: 1
+rewards:1300.0
+
+player: 0
+private, public cards: 4.0,6.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 4.0,6.0
+bets: 100.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 0
+private, public cards: 4.0,6.0
+bets: 100.0,1200.0
+actions: 1
+rewards:1300.0
+
+player: 0
+private, public cards: 7.0,3.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 7.0,3.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 0
+private, public cards: 7.0,3.0As
+bets: 100.0,100.0
+actions: 3
+rewards:200.0
+
+player: 1
+private, public cards: 7.0,3.0As
+bets: 1200.0,100.0
+actions: 1
+rewards:1300.0
+
+player: 0
+private, public cards: 0.0,5.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 0.0,5.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 0
+private, public cards: 0.0,5.0Qs
+bets: 100.0,100.0
+actions: 1
+rewards:200.0
+
+player: 1
+private, public cards: 0.0,5.0Qs
+bets: 100.0,100.0
+actions: 1
+rewards:200.0
+
+player: 0
+private, public cards: 6.0,3.0
+bets: 100.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 1
+private, public cards: 6.0,3.0
+bets: 1200.0,100.0
+actions: 1
+rewards:1300.0
+
+player: 0
+private, public cards: 5.0,4.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 5.0,4.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 0
+private, public cards: 5.0,4.0Qh
+bets: 100.0,100.0
+actions: 2
+rewards:-200.0
+
+player: 1
+private, public cards: 5.0,4.0Qh
+bets: 300.0,100.0
+actions: 2
+rewards:-800.0
+
+player: 0
+private, public cards: 5.0,4.0Qh
+bets: 300.0,900.0
+actions: 2
+rewards:-900.0
+
+player: 1
+private, public cards: 5.0,4.0Qh
+bets: 1200.0,900.0
+actions: 1
+rewards:2100.0
+
+player: 0
+private, public cards: 0.0,7.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 1
+private, public cards: 0.0,7.0
+bets: 1200.0,100.0
+actions: 0
+rewards:0.0
+
+player: 0
+private, public cards: 2.0,3.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 1
+private, public cards: 2.0,3.0
+bets: 1200.0,100.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 6.0,1.0
+bets: 100.0,100.0
+actions: 2
+rewards:200.0
+
+player: 1
+private, public cards: 6.0,1.0
+bets: 300.0,100.0
+actions: 1
+rewards:-200.0
+
+player: 0
+private, public cards: 6.0,1.0As
+bets: 300.0,300.0
+actions: 2
+rewards:-600.0
+
+player: 1
+private, public cards: 6.0,1.0As
+bets: 900.0,300.0
+actions: 2
+rewards:1500.0
+
+player: 0
+private, public cards: 6.0,1.0As
+bets: 900.0,1200.0
+actions: 0
+rewards:0.0
+
+player: 0
+private, public cards: 4.0,2.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 4.0,2.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 0
+private, public cards: 4.0,2.0Qs
+bets: 100.0,100.0
+actions: 1
+rewards:200.0
+
+player: 1
+private, public cards: 4.0,2.0Qs
+bets: 100.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 0
+private, public cards: 4.0,2.0Qs
+bets: 100.0,1200.0
+actions: 1
+rewards:1300.0
+
+player: 0
+private, public cards: 7.0,5.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 7.0,5.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 0
+private, public cards: 7.0,5.0Kh
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 7.0,5.0Kh
+bets: 100.0,100.0
+actions: 1
+rewards:200.0
+
+player: 0
+private, public cards: 4.0,2.0
+bets: 100.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 1
+private, public cards: 4.0,2.0
+bets: 1200.0,100.0
+actions: 1
+rewards:1300.0
+
+player: 0
+private, public cards: 6.0,3.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 6.0,3.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 0
+private, public cards: 6.0,3.0Ks
+bets: 100.0,100.0
+actions: 2
+rewards:-200.0
+
+player: 1
+private, public cards: 6.0,3.0Ks
+bets: 300.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 0
+private, public cards: 6.0,3.0Ks
+bets: 300.0,1200.0
+actions: 1
+rewards:-900.0
+
+player: 0
+private, public cards: 1.0,2.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 1
+private, public cards: 1.0,2.0
+bets: 1200.0,100.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 1.0,0.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 1.0,0.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 0
+private, public cards: 1.0,0.0
+bets: 100.0,1200.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 1.0,7.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 1
+private, public cards: 1.0,7.0
+bets: 1200.0,100.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 2.0,3.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 1
+private, public cards: 2.0,3.0
+bets: 1200.0,100.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 2.0,3.0
+bets: 100.0,100.0
+actions: 1
+rewards:200.0
+
+player: 1
+private, public cards: 2.0,3.0
+bets: 100.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 0
+private, public cards: 2.0,3.0
+bets: 100.0,1200.0
+actions: 0
+rewards:0.0
+
+player: 0
+private, public cards: 6.0,5.0
+bets: 100.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 1
+private, public cards: 6.0,5.0
+bets: 1200.0,100.0
+actions: 0
+rewards:0.0
+
+player: 0
+private, public cards: 4.0,0.0
+bets: 100.0,100.0
+actions: 2
+rewards:-200.0
+
+player: 1
+private, public cards: 4.0,0.0
+bets: 300.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 0
+private, public cards: 4.0,0.0
+bets: 300.0,1200.0
+actions: 1
+rewards:-900.0
+
+player: 0
+private, public cards: 0.0,2.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 1
+private, public cards: 0.0,2.0
+bets: 1200.0,100.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 1.0,4.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 1
+private, public cards: 1.0,4.0
+bets: 1200.0,100.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 5.0,0.0
+bets: 100.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 1
+private, public cards: 5.0,0.0
+bets: 1200.0,100.0
+actions: 1
+rewards:1300.0
+
+player: 0
+private, public cards: 4.0,6.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 1
+private, public cards: 4.0,6.0
+bets: 1200.0,100.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 6.0,5.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 6.0,5.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 0
+private, public cards: 6.0,5.0Kh
+bets: 100.0,100.0
+actions: 2
+rewards:-200.0
+
+player: 1
+private, public cards: 6.0,5.0Kh
+bets: 300.0,100.0
+actions: 1
+rewards:400.0
+
+player: 0
+private, public cards: 7.0,1.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 7.0,1.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 0
+private, public cards: 7.0,1.0Kh
+bets: 100.0,100.0
+actions: 2
+rewards:-200.0
+
+player: 1
+private, public cards: 7.0,1.0Kh
+bets: 300.0,100.0
+actions: 3
+rewards:400.0
+
+player: 0
+private, public cards: 7.0,1.0Kh
+bets: 300.0,1200.0
+actions: 1
+rewards:-900.0
+
+player: 0
+private, public cards: 1.0,2.0
+bets: 100.0,100.0
+actions: 2
+rewards:-200.0
+
+player: 1
+private, public cards: 1.0,2.0
+bets: 300.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 0
+private, public cards: 1.0,2.0
+bets: 300.0,1200.0
+actions: 1
+rewards:1500.0
+
+player: 0
+private, public cards: 1.0,6.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 1.0,6.0
+bets: 100.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 0
+private, public cards: 1.0,6.0
+bets: 100.0,1200.0
+actions: 1
+rewards:1300.0
+
+player: 0
+private, public cards: 0.0,3.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 1
+private, public cards: 0.0,3.0
+bets: 1200.0,100.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 5.0,3.0
+bets: 100.0,100.0
+actions: 2
+rewards:-200.0
+
+player: 1
+private, public cards: 5.0,3.0
+bets: 300.0,100.0
+actions: 2
+rewards:-800.0
+
+player: 0
+private, public cards: 5.0,3.0
+bets: 300.0,900.0
+actions: 2
+rewards:-900.0
+
+player: 1
+private, public cards: 5.0,3.0
+bets: 1200.0,900.0
+actions: 1
+rewards:2100.0
+
+player: 0
+private, public cards: 2.0,1.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 2.0,1.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 0
+private, public cards: 2.0,1.0Jh
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 2.0,1.0Jh
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 0
+private, public cards: 2.0,1.0Jh
+bets: 100.0,1200.0
+actions: 0
+rewards:0.0
+
+player: 0
+private, public cards: 7.0,1.0
+bets: 100.0,100.0
+actions: 1
+rewards:200.0
+
+player: 1
+private, public cards: 7.0,1.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 0
+private, public cards: 7.0,1.0
+bets: 100.0,1200.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 2.0,7.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 1
+private, public cards: 2.0,7.0
+bets: 1200.0,100.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 2.0,1.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 2.0,1.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 0
+private, public cards: 2.0,1.0
+bets: 100.0,1200.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 5.0,0.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 5.0,0.0
+bets: 100.0,100.0
+actions: 1
+rewards:200.0
+
+player: 0
+private, public cards: 5.0,0.0Qh
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 5.0,0.0Qh
+bets: 100.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 0
+private, public cards: 5.0,0.0Qh
+bets: 100.0,1200.0
+actions: 1
+rewards:1300.0
+
+player: 0
+private, public cards: 1.0,0.0
+bets: 100.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 1
+private, public cards: 1.0,0.0
+bets: 1200.0,100.0
+actions: 1
+rewards:1300.0
+
+player: 0
+private, public cards: 6.0,4.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 6.0,4.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 0
+private, public cards: 6.0,4.0Ah
+bets: 100.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 1
+private, public cards: 6.0,4.0Ah
+bets: 1200.0,100.0
+actions: 1
+rewards:1300.0
+
+player: 0
+private, public cards: 0.0,2.0
+bets: 100.0,100.0
+actions: 2
+rewards:-200.0
+
+player: 1
+private, public cards: 0.0,2.0
+bets: 300.0,100.0
+actions: 0
+rewards:0.0
+
+player: 0
+private, public cards: 4.0,5.0
+bets: 100.0,100.0
+actions: 1
+rewards:200.0
+
+player: 1
+private, public cards: 4.0,5.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 0
+private, public cards: 4.0,5.0Jh
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 4.0,5.0Jh
+bets: 100.0,100.0
+actions: 1
+rewards:200.0
+
+player: 0
+private, public cards: 7.0,0.0
+bets: 100.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 1
+private, public cards: 7.0,0.0
+bets: 1200.0,100.0
+actions: 1
+rewards:1300.0
+
+player: 0
+private, public cards: 7.0,5.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 7.0,5.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 0
+private, public cards: 7.0,5.0Ah
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 7.0,5.0Ah
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 0
+private, public cards: 7.0,5.0Ah
+bets: 100.0,1200.0
+actions: 0
+rewards:0.0
+
+player: 0
+private, public cards: 2.0,7.0
+bets: 100.0,100.0
+actions: 2
+rewards:-200.0
+
+player: 1
+private, public cards: 2.0,7.0
+bets: 300.0,100.0
+actions: 2
+rewards:-800.0
+
+player: 0
+private, public cards: 2.0,7.0
+bets: 300.0,900.0
+actions: 0
+rewards:0.0
+
+player: 0
+private, public cards: 4.0,2.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 4.0,2.0
+bets: 100.0,100.0
+actions: 1
+rewards:200.0
+
+player: 0
+private, public cards: 4.0,2.0Ah
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 4.0,2.0Ah
+bets: 100.0,100.0
+actions: 2
+rewards:-200.0
+
+player: 0
+private, public cards: 4.0,2.0Ah
+bets: 100.0,300.0
+actions: 2
+rewards:400.0
+
+player: 1
+private, public cards: 4.0,2.0Ah
+bets: 900.0,300.0
+actions: 2
+rewards:1500.0
+
+player: 0
+private, public cards: 4.0,2.0Ah
+bets: 900.0,1200.0
+actions: 1
+rewards:-300.0
+
+player: 0
+private, public cards: 5.0,1.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 5.0,1.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 0
+private, public cards: 5.0,1.0
+bets: 100.0,1200.0
+actions: 0
+rewards:0.0
+
+player: 0
+private, public cards: 3.0,2.0
+bets: 100.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 1
+private, public cards: 3.0,2.0
+bets: 1200.0,100.0
+actions: 1
+rewards:1300.0
+
+player: 0
+private, public cards: 0.0,2.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 0.0,2.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 0
+private, public cards: 0.0,2.0Ks
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 0.0,2.0Ks
+bets: 100.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 0
+private, public cards: 0.0,2.0Ks
+bets: 100.0,1200.0
+actions: 1
+rewards:1300.0
+
+player: 0
+private, public cards: 5.0,1.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 5.0,1.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 0
+private, public cards: 5.0,1.0Qh
+bets: 100.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 1
+private, public cards: 5.0,1.0Qh
+bets: 1200.0,100.0
+actions: 1
+rewards:1300.0
+
+player: 0
+private, public cards: 5.0,4.0
+bets: 100.0,100.0
+actions: 1
+rewards:200.0
+
+player: 1
+private, public cards: 5.0,4.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 0
+private, public cards: 5.0,4.0
+bets: 100.0,1200.0
+actions: 0
+rewards:0.0
+
+player: 0
+private, public cards: 0.0,3.0
+bets: 100.0,100.0
+actions: 3
+rewards:200.0
+
+player: 1
+private, public cards: 0.0,3.0
+bets: 1200.0,100.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 2.0,1.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 2.0,1.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 0
+private, public cards: 2.0,1.0Ah
+bets: 100.0,100.0
+actions: 1
+rewards:200.0
+
+player: 1
+private, public cards: 2.0,1.0Ah
+bets: 100.0,100.0
+actions: 1
+rewards:200.0
+
+player: 0
+private, public cards: 5.0,2.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 5.0,2.0
+bets: 100.0,100.0
+actions: 1
+rewards:200.0
+
+player: 0
+private, public cards: 5.0,2.0Ah
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 5.0,2.0Ah
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 0
+private, public cards: 5.0,2.0Ah
+bets: 100.0,1200.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 6.0,2.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 6.0,2.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 0
+private, public cards: 6.0,2.0
+bets: 100.0,1200.0
+actions: 0
+rewards:0.0
+
+player: 0
+private, public cards: 4.0,6.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 1
+private, public cards: 4.0,6.0
+bets: 1200.0,100.0
+actions: 0
+rewards:0.0
+
+player: 0
+private, public cards: 4.0,1.0
+bets: 100.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 1
+private, public cards: 4.0,1.0
+bets: 1200.0,100.0
+actions: 1
+rewards:1300.0
+
+player: 0
+private, public cards: 1.0,3.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 1
+private, public cards: 1.0,3.0
+bets: 1200.0,100.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 4.0,3.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 4.0,3.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 0
+private, public cards: 4.0,3.0Ah
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 4.0,3.0Ah
+bets: 100.0,100.0
+actions: 2
+rewards:-200.0
+
+player: 0
+private, public cards: 4.0,3.0Ah
+bets: 100.0,300.0
+actions: 3
+rewards:-1100.0
+
+player: 1
+private, public cards: 4.0,3.0Ah
+bets: 1200.0,300.0
+actions: 1
+rewards:1500.0
+
+player: 0
+private, public cards: 2.0,7.0
+bets: 100.0,100.0
+actions: 1
+rewards:200.0
+
+player: 1
+private, public cards: 2.0,7.0
+bets: 100.0,100.0
+actions: 2
+rewards:200.0
+
+player: 0
+private, public cards: 2.0,7.0
+bets: 100.0,300.0
+actions: 2
+rewards:-800.0
+
+player: 1
+private, public cards: 2.0,7.0
+bets: 900.0,300.0
+actions: 1
+rewards:-600.0
+
+player: 0
+private, public cards: 2.0,7.0Jh
+bets: 900.0,900.0
+actions: 2
+rewards:-300.0
+
+player: 1
+private, public cards: 2.0,7.0Jh
+bets: 1200.0,900.0
+actions: 1
+rewards:2100.0
+
+player: 0
+private, public cards: 0.0,5.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 1
+private, public cards: 0.0,5.0
+bets: 1200.0,100.0
+actions: 0
+rewards:0.0
+
+player: 0
+private, public cards: 6.0,1.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 6.0,1.0
+bets: 100.0,100.0
+actions: 3
+rewards:200.0
+
+player: 0
+private, public cards: 6.0,1.0
+bets: 100.0,1200.0
+actions: 0
+rewards:0.0
+
+player: 0
+private, public cards: 3.0,6.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 1
+private, public cards: 3.0,6.0
+bets: 1200.0,100.0
+actions: 0
+rewards:0.0
+
+player: 0
+private, public cards: 1.0,0.0
+bets: 100.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 1
+private, public cards: 1.0,0.0
+bets: 1200.0,100.0
+actions: 1
+rewards:1300.0
+
+player: 0
+private, public cards: 5.0,6.0
+bets: 100.0,100.0
+actions: 2
+rewards:-200.0
+
+player: 1
+private, public cards: 5.0,6.0
+bets: 300.0,100.0
+actions: 3
+rewards:400.0
+
+player: 0
+private, public cards: 5.0,6.0
+bets: 300.0,1200.0
+actions: 1
+rewards:1500.0
+
+player: 0
+private, public cards: 2.0,0.0
+bets: 100.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 1
+private, public cards: 2.0,0.0
+bets: 1200.0,100.0
+actions: 1
+rewards:1300.0
+
+player: 0
+private, public cards: 7.0,2.0
+bets: 100.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 1
+private, public cards: 7.0,2.0
+bets: 1200.0,100.0
+actions: 1
+rewards:1300.0
+
+player: 0
+private, public cards: 1.0,2.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 1
+private, public cards: 1.0,2.0
+bets: 1200.0,100.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 2.0,1.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 2.0,1.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 0
+private, public cards: 2.0,1.0
+bets: 100.0,1200.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 6.0,7.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 6.0,7.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 0
+private, public cards: 6.0,7.0As
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 6.0,7.0As
+bets: 100.0,100.0
+actions: 1
+rewards:200.0
+
+player: 0
+private, public cards: 6.0,4.0
+bets: 100.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 1
+private, public cards: 6.0,4.0
+bets: 1200.0,100.0
+actions: 1
+rewards:1300.0
+
+player: 0
+private, public cards: 3.0,1.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 3.0,1.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 0
+private, public cards: 3.0,1.0Ah
+bets: 100.0,100.0
+actions: 3
+rewards:200.0
+
+player: 1
+private, public cards: 3.0,1.0Ah
+bets: 1200.0,100.0
+actions: 1
+rewards:1300.0
+
+player: 0
+private, public cards: 5.0,1.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 5.0,1.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 0
+private, public cards: 5.0,1.0Ks
+bets: 100.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 1
+private, public cards: 5.0,1.0Ks
+bets: 1200.0,100.0
+actions: 1
+rewards:1300.0
+
+player: 0
+private, public cards: 3.0,4.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 3.0,4.0
+bets: 100.0,100.0
+actions: 2
+rewards:200.0
+
+player: 0
+private, public cards: 3.0,4.0Kh
+bets: 300.0,300.0
+actions: 0
+rewards:0.0
+
+player: 0
+private, public cards: 1.0,7.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 1
+private, public cards: 1.0,7.0
+bets: 1200.0,100.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 6.0,5.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 6.0,5.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 0
+private, public cards: 6.0,5.0Ah
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 6.0,5.0Ah
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 0
+private, public cards: 6.0,5.0Ah
+bets: 100.0,1200.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 5.0,3.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 5.0,3.0
+bets: 100.0,100.0
+actions: 1
+rewards:200.0
+
+player: 0
+private, public cards: 5.0,3.0Ah
+bets: 100.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 1
+private, public cards: 5.0,3.0Ah
+bets: 1200.0,100.0
+actions: 0
+rewards:0.0
+
+player: 0
+private, public cards: 0.0,1.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 0.0,1.0
+bets: 100.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 0
+private, public cards: 0.0,1.0
+bets: 100.0,1200.0
+actions: 1
+rewards:1300.0
+
+player: 0
+private, public cards: 4.0,6.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 4.0,6.0
+bets: 100.0,100.0
+actions: 2
+rewards:-200.0
+
+player: 0
+private, public cards: 4.0,6.0
+bets: 100.0,300.0
+actions: 2
+rewards:-800.0
+
+player: 1
+private, public cards: 4.0,6.0
+bets: 900.0,300.0
+actions: 2
+rewards:-900.0
+
+player: 0
+private, public cards: 4.0,6.0
+bets: 900.0,1200.0
+actions: 1
+rewards:2100.0
+
+player: 0
+private, public cards: 6.0,7.0
+bets: 100.0,100.0
+actions: 2
+rewards:-200.0
+
+player: 1
+private, public cards: 6.0,7.0
+bets: 300.0,100.0
+actions: 2
+rewards:-800.0
+
+player: 0
+private, public cards: 6.0,7.0Ah
+bets: 900.0,900.0
+actions: 2
+rewards:-300.0
+
+player: 1
+private, public cards: 6.0,7.0Ah
+bets: 1200.0,900.0
+actions: 1
+rewards:2100.0
+
+player: 0
+private, public cards: 3.0,7.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 1
+private, public cards: 3.0,7.0
+bets: 1200.0,100.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 1.0,0.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 1.0,0.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 0
+private, public cards: 1.0,0.0Kh
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 1.0,0.0Kh
+bets: 100.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 0
+private, public cards: 1.0,0.0Kh
+bets: 100.0,1200.0
+actions: 1
+rewards:1300.0
+
+player: 0
+private, public cards: 0.0,6.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 1
+private, public cards: 0.0,6.0
+bets: 1200.0,100.0
+actions: 0
+rewards:0.0
+
+player: 0
+private, public cards: 2.0,1.0
+bets: 100.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 1
+private, public cards: 2.0,1.0
+bets: 1200.0,100.0
+actions: 1
+rewards:1300.0
+
+player: 0
+private, public cards: 0.0,1.0
+bets: 100.0,100.0
+actions: 2
+rewards:-200.0
+
+player: 1
+private, public cards: 0.0,1.0
+bets: 300.0,100.0
+actions: 2
+rewards:-800.0
+
+player: 0
+private, public cards: 0.0,1.0
+bets: 300.0,900.0
+actions: 2
+rewards:1500.0
+
+player: 1
+private, public cards: 0.0,1.0
+bets: 1200.0,900.0
+actions: 1
+rewards:-300.0
+
+player: 0
+private, public cards: 3.0,4.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 3.0,4.0
+bets: 100.0,100.0
+actions: 1
+rewards:200.0
+
+player: 0
+private, public cards: 3.0,4.0Qh
+bets: 100.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 1
+private, public cards: 3.0,4.0Qh
+bets: 1200.0,100.0
+actions: 1
+rewards:1300.0
+
+player: 0
+private, public cards: 0.0,1.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 1
+private, public cards: 0.0,1.0
+bets: 1200.0,100.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 1.0,2.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 1
+private, public cards: 1.0,2.0
+bets: 1200.0,100.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 7.0,4.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 7.0,4.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 0
+private, public cards: 7.0,4.0
+bets: 100.0,1200.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 1.0,3.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 1.0,3.0
+bets: 100.0,100.0
+actions: 2
+rewards:-200.0
+
+player: 0
+private, public cards: 1.0,3.0Ah
+bets: 300.0,300.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 1.0,3.0Ah
+bets: 300.0,300.0
+actions: 3
+rewards:-900.0
+
+player: 0
+private, public cards: 1.0,3.0Ah
+bets: 300.0,1200.0
+actions: 1
+rewards:1500.0
+
+player: 0
+private, public cards: 0.0,5.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 1
+private, public cards: 0.0,5.0
+bets: 1200.0,100.0
+actions: 0
+rewards:0.0
+
+player: 0
+private, public cards: 1.0,7.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 1
+private, public cards: 1.0,7.0
+bets: 1200.0,100.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 2.0,5.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 1
+private, public cards: 2.0,5.0
+bets: 1200.0,100.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 7.0,2.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 7.0,2.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 0
+private, public cards: 7.0,2.0Kh
+bets: 100.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 1
+private, public cards: 7.0,2.0Kh
+bets: 1200.0,100.0
+actions: 1
+rewards:1300.0
+
+player: 0
+private, public cards: 0.0,5.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 1
+private, public cards: 0.0,5.0
+bets: 1200.0,100.0
+actions: 0
+rewards:0.0
+
+player: 0
+private, public cards: 0.0,1.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 1
+private, public cards: 0.0,1.0
+bets: 1200.0,100.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 6.0,5.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 6.0,5.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 0
+private, public cards: 6.0,5.0Ks
+bets: 100.0,100.0
+actions: 2
+rewards:-200.0
+
+player: 1
+private, public cards: 6.0,5.0Ks
+bets: 300.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 0
+private, public cards: 6.0,5.0Ks
+bets: 300.0,1200.0
+actions: 1
+rewards:-900.0
+
+player: 0
+private, public cards: 7.0,5.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 7.0,5.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 0
+private, public cards: 7.0,5.0Kh
+bets: 100.0,100.0
+actions: 1
+rewards:200.0
+
+player: 1
+private, public cards: 7.0,5.0Kh
+bets: 100.0,100.0
+actions: 1
+rewards:200.0
+
+player: 0
+private, public cards: 4.0,0.0
+bets: 100.0,100.0
+actions: 2
+rewards:-200.0
+
+player: 1
+private, public cards: 4.0,0.0
+bets: 300.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 0
+private, public cards: 4.0,0.0
+bets: 300.0,1200.0
+actions: 1
+rewards:-900.0
+
+player: 0
+private, public cards: 5.0,7.0
+bets: 100.0,100.0
+actions: 2
+rewards:-200.0
+
+player: 1
+private, public cards: 5.0,7.0
+bets: 300.0,100.0
+actions: 0
+rewards:0.0
+
+player: 0
+private, public cards: 5.0,3.0
+bets: 100.0,100.0
+actions: 1
+rewards:200.0
+
+player: 1
+private, public cards: 5.0,3.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 0
+private, public cards: 5.0,3.0Kh
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 5.0,3.0Kh
+bets: 100.0,100.0
+actions: 3
+rewards:200.0
+
+player: 0
+private, public cards: 5.0,3.0Kh
+bets: 100.0,1200.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 6.0,4.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 6.0,4.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 0
+private, public cards: 6.0,4.0Ah
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 6.0,4.0Ah
+bets: 100.0,100.0
+actions: 1
+rewards:200.0
+
+player: 0
+private, public cards: 5.0,4.0
+bets: 100.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 1
+private, public cards: 5.0,4.0
+bets: 1200.0,100.0
+actions: 1
+rewards:1300.0
+
+player: 0
+private, public cards: 5.0,2.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 5.0,2.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 0
+private, public cards: 5.0,2.0
+bets: 100.0,1200.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 5.0,7.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 5.0,7.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 0
+private, public cards: 5.0,7.0Ks
+bets: 100.0,100.0
+actions: 1
+rewards:200.0
+
+player: 1
+private, public cards: 5.0,7.0Ks
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 0
+private, public cards: 1.0,5.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 1
+private, public cards: 1.0,5.0
+bets: 1200.0,100.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 6.0,0.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 6.0,0.0
+bets: 100.0,100.0
+actions: 3
+rewards:200.0
+
+player: 0
+private, public cards: 6.0,0.0
+bets: 100.0,1200.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 0.0,1.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 0.0,1.0
+bets: 100.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 0
+private, public cards: 0.0,1.0
+bets: 100.0,1200.0
+actions: 1
+rewards:1300.0
+
+player: 0
+private, public cards: 2.0,5.0
+bets: 100.0,100.0
+actions: 1
+rewards:200.0
+
+player: 1
+private, public cards: 2.0,5.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 0
+private, public cards: 2.0,5.0Ah
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 1
+private, public cards: 2.0,5.0Ah
+bets: 1200.0,100.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 1.0,5.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 1
+private, public cards: 1.0,5.0
+bets: 1200.0,100.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 2.0,5.0
+bets: 100.0,100.0
+actions: 3
+rewards:200.0
+
+player: 1
+private, public cards: 2.0,5.0
+bets: 1200.0,100.0
+actions: 0
+rewards:0.0
+
+player: 0
+private, public cards: 6.0,4.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 6.0,4.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 0
+private, public cards: 6.0,4.0Ks
+bets: 100.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 1
+private, public cards: 6.0,4.0Ks
+bets: 1200.0,100.0
+actions: 1
+rewards:1300.0
+
+player: 0
+private, public cards: 1.0,0.0
+bets: 100.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 1
+private, public cards: 1.0,0.0
+bets: 1200.0,100.0
+actions: 1
+rewards:1300.0
+
+player: 0
+private, public cards: 1.0,4.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 1.0,4.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 0
+private, public cards: 1.0,4.0Jh
+bets: 100.0,100.0
+actions: 2
+rewards:400.0
+
+player: 1
+private, public cards: 1.0,4.0Jh
+bets: 300.0,100.0
+actions: 2
+rewards:-800.0
+
+player: 0
+private, public cards: 1.0,4.0Jh
+bets: 300.0,900.0
+actions: 2
+rewards:1500.0
+
+player: 1
+private, public cards: 1.0,4.0Jh
+bets: 1200.0,900.0
+actions: 1
+rewards:-300.0
+
+player: 0
+private, public cards: 6.0,5.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 6.0,5.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 0
+private, public cards: 6.0,5.0Qs
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 6.0,5.0Qs
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 0
+private, public cards: 6.0,5.0Qs
+bets: 100.0,1200.0
+actions: 0
+rewards:0.0
+
+player: 0
+private, public cards: 0.0,2.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 1
+private, public cards: 0.0,2.0
+bets: 1200.0,100.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 4.0,3.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 4.0,3.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 0
+private, public cards: 4.0,3.0Qs
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 1
+private, public cards: 4.0,3.0Qs
+bets: 1200.0,100.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 7.0,3.0
+bets: 100.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 1
+private, public cards: 7.0,3.0
+bets: 1200.0,100.0
+actions: 1
+rewards:1300.0
+
+player: 0
+private, public cards: 5.0,3.0
+bets: 100.0,100.0
+actions: 1
+rewards:200.0
+
+player: 1
+private, public cards: 5.0,3.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 0
+private, public cards: 5.0,3.0
+bets: 100.0,1200.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 3.0,2.0
+bets: 100.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 1
+private, public cards: 3.0,2.0
+bets: 1200.0,100.0
+actions: 1
+rewards:1300.0
+
+player: 0
+private, public cards: 7.0,0.0
+bets: 100.0,100.0
+actions: 1
+rewards:200.0
+
+player: 1
+private, public cards: 7.0,0.0
+bets: 100.0,100.0
+actions: 2
+rewards:200.0
+
+player: 0
+private, public cards: 7.0,0.0
+bets: 100.0,300.0
+actions: 3
+rewards:-1100.0
+
+player: 1
+private, public cards: 7.0,0.0
+bets: 1200.0,300.0
+actions: 1
+rewards:1500.0
+
+player: 0
+private, public cards: 6.0,4.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 6.0,4.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 0
+private, public cards: 6.0,4.0
+bets: 100.0,1200.0
+actions: 0
+rewards:0.0
+
+player: 0
+private, public cards: 5.0,4.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 5.0,4.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 0
+private, public cards: 5.0,4.0
+bets: 100.0,1200.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 1.0,7.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 1
+private, public cards: 1.0,7.0
+bets: 1200.0,100.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 6.0,2.0
+bets: 100.0,100.0
+actions: 2
+rewards:-200.0
+
+player: 1
+private, public cards: 6.0,2.0
+bets: 300.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 0
+private, public cards: 6.0,2.0
+bets: 300.0,1200.0
+actions: 1
+rewards:-900.0
+
+player: 0
+private, public cards: 5.0,3.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 5.0,3.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 0
+private, public cards: 5.0,3.0
+bets: 100.0,1200.0
+actions: 0
+rewards:0.0
+
+player: 0
+private, public cards: 6.0,3.0
+bets: 100.0,100.0
+actions: 2
+rewards:-200.0
+
+player: 1
+private, public cards: 6.0,3.0
+bets: 300.0,100.0
+actions: 1
+rewards:-200.0
+
+player: 0
+private, public cards: 6.0,3.0Qh
+bets: 300.0,300.0
+actions: 3
+rewards:-900.0
+
+player: 1
+private, public cards: 6.0,3.0Qh
+bets: 1200.0,300.0
+actions: 0
+rewards:0.0
+
+player: 0
+private, public cards: 2.0,5.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 1
+private, public cards: 2.0,5.0
+bets: 1200.0,100.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 1.0,2.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 1.0,2.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 0
+private, public cards: 1.0,2.0Ah
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 1
+private, public cards: 1.0,2.0Ah
+bets: 1200.0,100.0
+actions: 0
+rewards:0.0
+
+player: 0
+private, public cards: 1.0,0.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 1.0,0.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 0
+private, public cards: 1.0,0.0Kh
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 1.0,0.0Kh
+bets: 100.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 0
+private, public cards: 1.0,0.0Kh
+bets: 100.0,1200.0
+actions: 1
+rewards:1300.0
+
+player: 0
+private, public cards: 7.0,0.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 7.0,0.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 0
+private, public cards: 7.0,0.0
+bets: 100.0,1200.0
+actions: 0
+rewards:0.0
+
+player: 0
+private, public cards: 7.0,1.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 7.0,1.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 0
+private, public cards: 7.0,1.0Kh
+bets: 100.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 1
+private, public cards: 7.0,1.0Kh
+bets: 1200.0,100.0
+actions: 1
+rewards:1300.0
+
+player: 0
+private, public cards: 7.0,1.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 7.0,1.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 0
+private, public cards: 7.0,1.0Qh
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 7.0,1.0Qh
+bets: 100.0,100.0
+actions: 1
+rewards:200.0
+
+player: 0
+private, public cards: 5.0,2.0
+bets: 100.0,100.0
+actions: 2
+rewards:-200.0
+
+player: 1
+private, public cards: 5.0,2.0
+bets: 300.0,100.0
+actions: 1
+rewards:-200.0
+
+player: 0
+private, public cards: 5.0,2.0Kh
+bets: 300.0,300.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 5.0,2.0Kh
+bets: 300.0,300.0
+actions: 3
+rewards:1500.0
+
+player: 0
+private, public cards: 5.0,2.0Kh
+bets: 300.0,1200.0
+actions: 1
+rewards:-900.0
+
+player: 0
+private, public cards: 1.0,7.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 1
+private, public cards: 1.0,7.0
+bets: 1200.0,100.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 7.0,0.0
+bets: 100.0,100.0
+actions: 2
+rewards:-200.0
+
+player: 1
+private, public cards: 7.0,0.0
+bets: 300.0,100.0
+actions: 2
+rewards:-800.0
+
+player: 0
+private, public cards: 7.0,0.0
+bets: 300.0,900.0
+actions: 2
+rewards:-900.0
+
+player: 1
+private, public cards: 7.0,0.0
+bets: 1200.0,900.0
+actions: 1
+rewards:2100.0
+
+player: 0
+private, public cards: 3.0,7.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 1
+private, public cards: 3.0,7.0
+bets: 1200.0,100.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 4.0,0.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 4.0,0.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 0
+private, public cards: 4.0,0.0
+bets: 100.0,1200.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 1.0,3.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 1.0,3.0
+bets: 100.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 0
+private, public cards: 1.0,3.0
+bets: 100.0,1200.0
+actions: 1
+rewards:1300.0
+
+player: 0
+private, public cards: 4.0,7.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 4.0,7.0
+bets: 100.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 0
+private, public cards: 4.0,7.0
+bets: 100.0,1200.0
+actions: 1
+rewards:1300.0
+
+player: 0
+private, public cards: 7.0,0.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 7.0,0.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 0
+private, public cards: 7.0,0.0As
+bets: 100.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 1
+private, public cards: 7.0,0.0As
+bets: 1200.0,100.0
+actions: 1
+rewards:1300.0
+
+player: 0
+private, public cards: 4.0,0.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 4.0,0.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 0
+private, public cards: 4.0,0.0
+bets: 100.0,1200.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 5.0,1.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 5.0,1.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 0
+private, public cards: 5.0,1.0Kh
+bets: 100.0,100.0
+actions: 2
+rewards:-200.0
+
+player: 1
+private, public cards: 5.0,1.0Kh
+bets: 300.0,100.0
+actions: 0
+rewards:0.0
+
+player: 0
+private, public cards: 4.0,5.0
+bets: 100.0,100.0
+actions: 1
+rewards:200.0
+
+player: 1
+private, public cards: 4.0,5.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 0
+private, public cards: 4.0,5.0As
+bets: 100.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 1
+private, public cards: 4.0,5.0As
+bets: 1200.0,100.0
+actions: 1
+rewards:1300.0
+
+player: 0
+private, public cards: 2.0,1.0
+bets: 100.0,100.0
+actions: 2
+rewards:-200.0
+
+player: 1
+private, public cards: 2.0,1.0
+bets: 300.0,100.0
+actions: 1
+rewards:-200.0
+
+player: 0
+private, public cards: 2.0,1.0Ks
+bets: 300.0,300.0
+actions: 3
+rewards:-900.0
+
+player: 1
+private, public cards: 2.0,1.0Ks
+bets: 1200.0,300.0
+actions: 1
+rewards:1500.0
+
+player: 0
+private, public cards: 6.0,4.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 6.0,4.0
+bets: 100.0,100.0
+actions: 3
+rewards:200.0
+
+player: 0
+private, public cards: 6.0,4.0
+bets: 100.0,1200.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 1.0,3.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 1
+private, public cards: 1.0,3.0
+bets: 1200.0,100.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 3.0,0.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 3.0,0.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 0
+private, public cards: 3.0,0.0
+bets: 100.0,1200.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 2.0,0.0
+bets: 100.0,100.0
+actions: 3
+rewards:200.0
+
+player: 1
+private, public cards: 2.0,0.0
+bets: 1200.0,100.0
+actions: 1
+rewards:1300.0
+
+player: 0
+private, public cards: 1.0,2.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 1
+private, public cards: 1.0,2.0
+bets: 1200.0,100.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 6.0,2.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 6.0,2.0
+bets: 100.0,100.0
+actions: 2
+rewards:-200.0
+
+player: 0
+private, public cards: 6.0,2.0Ah
+bets: 300.0,300.0
+actions: 2
+rewards:-600.0
+
+player: 1
+private, public cards: 6.0,2.0Ah
+bets: 900.0,300.0
+actions: 2
+rewards:1500.0
+
+player: 0
+private, public cards: 6.0,2.0Ah
+bets: 900.0,1200.0
+actions: 1
+rewards:-300.0
+
+player: 0
+private, public cards: 7.0,0.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 7.0,0.0
+bets: 100.0,100.0
+actions: 3
+rewards:200.0
+
+player: 0
+private, public cards: 7.0,0.0
+bets: 100.0,1200.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 4.0,6.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 4.0,6.0
+bets: 100.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 0
+private, public cards: 4.0,6.0
+bets: 100.0,1200.0
+actions: 1
+rewards:1300.0
+
+player: 0
+private, public cards: 1.0,2.0
+bets: 100.0,100.0
+actions: 1
+rewards:200.0
+
+player: 1
+private, public cards: 1.0,2.0
+bets: 100.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 0
+private, public cards: 1.0,2.0
+bets: 100.0,1200.0
+actions: 1
+rewards:1300.0
+
+player: 0
+private, public cards: 7.0,2.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 7.0,2.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 0
+private, public cards: 7.0,2.0
+bets: 100.0,1200.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 6.0,3.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 6.0,3.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 0
+private, public cards: 6.0,3.0
+bets: 100.0,1200.0
+actions: 0
+rewards:0.0
+
+player: 0
+private, public cards: 6.0,0.0
+bets: 100.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 1
+private, public cards: 6.0,0.0
+bets: 1200.0,100.0
+actions: 1
+rewards:1300.0
+
+player: 0
+private, public cards: 3.0,7.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 1
+private, public cards: 3.0,7.0
+bets: 1200.0,100.0
+actions: 0
+rewards:0.0
+
+player: 0
+private, public cards: 2.0,0.0
+bets: 100.0,100.0
+actions: 3
+rewards:200.0
+
+player: 1
+private, public cards: 2.0,0.0
+bets: 1200.0,100.0
+actions: 1
+rewards:1300.0
+
+player: 0
+private, public cards: 0.0,2.0
+bets: 100.0,100.0
+actions: 2
+rewards:-200.0
+
+player: 1
+private, public cards: 0.0,2.0
+bets: 300.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 0
+private, public cards: 0.0,2.0
+bets: 300.0,1200.0
+actions: 1
+rewards:1500.0
+
+player: 0
+private, public cards: 6.0,7.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 6.0,7.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 0
+private, public cards: 6.0,7.0Qs
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 6.0,7.0Qs
+bets: 100.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 0
+private, public cards: 6.0,7.0Qs
+bets: 100.0,1200.0
+actions: 0
+rewards:0.0
+
+player: 0
+private, public cards: 0.0,3.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 1
+private, public cards: 0.0,3.0
+bets: 1200.0,100.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 5.0,4.0
+bets: 100.0,100.0
+actions: 2
+rewards:-200.0
+
+player: 1
+private, public cards: 5.0,4.0
+bets: 300.0,100.0
+actions: 1
+rewards:-200.0
+
+player: 0
+private, public cards: 5.0,4.0Ks
+bets: 300.0,300.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 5.0,4.0Ks
+bets: 300.0,300.0
+actions: 1
+rewards:600.0
+
+player: 0
+private, public cards: 7.0,4.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 7.0,4.0
+bets: 100.0,100.0
+actions: 1
+rewards:200.0
+
+player: 0
+private, public cards: 7.0,4.0Kh
+bets: 100.0,100.0
+actions: 3
+rewards:200.0
+
+player: 1
+private, public cards: 7.0,4.0Kh
+bets: 1200.0,100.0
+actions: 1
+rewards:1300.0
+
+player: 0
+private, public cards: 5.0,7.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 5.0,7.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 0
+private, public cards: 5.0,7.0Qh
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 5.0,7.0Qh
+bets: 100.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 0
+private, public cards: 5.0,7.0Qh
+bets: 100.0,1200.0
+actions: 1
+rewards:1300.0
+
+player: 0
+private, public cards: 3.0,4.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 1
+private, public cards: 3.0,4.0
+bets: 1200.0,100.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 2.0,4.0
+bets: 100.0,100.0
+actions: 3
+rewards:200.0
+
+player: 1
+private, public cards: 2.0,4.0
+bets: 1200.0,100.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 7.0,0.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 7.0,0.0
+bets: 100.0,100.0
+actions: 3
+rewards:200.0
+
+player: 0
+private, public cards: 7.0,0.0
+bets: 100.0,1200.0
+actions: 0
+rewards:0.0
+
+player: 0
+private, public cards: 3.0,5.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 1
+private, public cards: 3.0,5.0
+bets: 1200.0,100.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 3.0,2.0
+bets: 100.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 1
+private, public cards: 3.0,2.0
+bets: 1200.0,100.0
+actions: 0
+rewards:0.0
+
+player: 0
+private, public cards: 4.0,7.0
+bets: 100.0,100.0
+actions: 1
+rewards:200.0
+
+player: 1
+private, public cards: 4.0,7.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 0
+private, public cards: 4.0,7.0As
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 1
+private, public cards: 4.0,7.0As
+bets: 1200.0,100.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 0.0,2.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 1
+private, public cards: 0.0,2.0
+bets: 1200.0,100.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 3.0,5.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 1
+private, public cards: 3.0,5.0
+bets: 1200.0,100.0
+actions: 0
+rewards:0.0
+
+player: 0
+private, public cards: 7.0,6.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 7.0,6.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 0
+private, public cards: 7.0,6.0Kh
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 7.0,6.0Kh
+bets: 100.0,100.0
+actions: 1
+rewards:200.0
+
+player: 0
+private, public cards: 2.0,0.0
+bets: 100.0,100.0
+actions: 2
+rewards:-200.0
+
+player: 1
+private, public cards: 2.0,0.0
+bets: 300.0,100.0
+actions: 1
+rewards:-200.0
+
+player: 0
+private, public cards: 2.0,0.0As
+bets: 300.0,300.0
+actions: 3
+rewards:-900.0
+
+player: 1
+private, public cards: 2.0,0.0As
+bets: 1200.0,300.0
+actions: 1
+rewards:1500.0
+
+player: 0
+private, public cards: 1.0,4.0
+bets: 100.0,100.0
+actions: 1
+rewards:200.0
+
+player: 1
+private, public cards: 1.0,4.0
+bets: 100.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 0
+private, public cards: 1.0,4.0
+bets: 100.0,1200.0
+actions: 1
+rewards:1300.0
+
+player: 0
+private, public cards: 1.0,2.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 1
+private, public cards: 1.0,2.0
+bets: 1200.0,100.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 1.0,2.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 1
+private, public cards: 1.0,2.0
+bets: 1200.0,100.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 1.0,5.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 1
+private, public cards: 1.0,5.0
+bets: 1200.0,100.0
+actions: 0
+rewards:0.0
+
+player: 0
+private, public cards: 5.0,0.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 5.0,0.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 0
+private, public cards: 5.0,0.0
+bets: 100.0,1200.0
+actions: 0
+rewards:0.0
+
+player: 0
+private, public cards: 4.0,3.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 4.0,3.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 0
+private, public cards: 4.0,3.0
+bets: 100.0,1200.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 7.0,0.0
+bets: 100.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 1
+private, public cards: 7.0,0.0
+bets: 1200.0,100.0
+actions: 1
+rewards:1300.0
+
+player: 0
+private, public cards: 5.0,1.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 5.0,1.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 0
+private, public cards: 5.0,1.0
+bets: 100.0,1200.0
+actions: 0
+rewards:0.0
+
+player: 0
+private, public cards: 7.0,4.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 7.0,4.0
+bets: 100.0,100.0
+actions: 3
+rewards:200.0
+
+player: 0
+private, public cards: 7.0,4.0
+bets: 100.0,1200.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 3.0,7.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 1
+private, public cards: 3.0,7.0
+bets: 1200.0,100.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 7.0,2.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 7.0,2.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 0
+private, public cards: 7.0,2.0
+bets: 100.0,1200.0
+actions: 1
+rewards:-1100.0
+
+player: 0
+private, public cards: 6.0,7.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 6.0,7.0
+bets: 100.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 0
+private, public cards: 6.0,7.0
+bets: 100.0,1200.0
+actions: 0
+rewards:0.0
+
+player: 0
+private, public cards: 6.0,2.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 6.0,2.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 0
+private, public cards: 6.0,2.0
+bets: 100.0,1200.0
+actions: 0
+rewards:0.0
+
+player: 0
+private, public cards: 2.0,5.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 2.0,5.0
+bets: 100.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 0
+private, public cards: 2.0,5.0
+bets: 100.0,1200.0
+actions: 0
+rewards:0.0
+
+player: 0
+private, public cards: 7.0,1.0
+bets: 100.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 1
+private, public cards: 7.0,1.0
+bets: 1200.0,100.0
+actions: 1
+rewards:1300.0
+
+player: 0
+private, public cards: 0.0,2.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 0.0,2.0
+bets: 100.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 0
+private, public cards: 0.0,2.0
+bets: 100.0,1200.0
+actions: 1
+rewards:1300.0
+
+player: 0
+private, public cards: 4.0,5.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 4.0,5.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 0
+private, public cards: 4.0,5.0As
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 4.0,5.0As
+bets: 100.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 0
+private, public cards: 4.0,5.0As
+bets: 100.0,1200.0
+actions: 1
+rewards:1300.0
+
+player: 0
+private, public cards: 5.0,4.0
+bets: 100.0,100.0
+actions: 2
+rewards:-200.0
+
+player: 1
+private, public cards: 5.0,4.0
+bets: 300.0,100.0
+actions: 2
+rewards:-800.0
+
+player: 0
+private, public cards: 5.0,4.0Ah
+bets: 900.0,900.0
+actions: 2
+rewards:-300.0
+
+player: 1
+private, public cards: 5.0,4.0Ah
+bets: 1200.0,900.0
+actions: 1
+rewards:2100.0
+
+player: 0
+private, public cards: 1.0,7.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 1.0,7.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 0
+private, public cards: 1.0,7.0Jh
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 1.0,7.0Jh
+bets: 100.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 0
+private, public cards: 1.0,7.0Jh
+bets: 100.0,1200.0
+actions: 1
+rewards:1300.0
+
+player: 0
+private, public cards: 2.0,0.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 2.0,0.0
+bets: 100.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 0
+private, public cards: 2.0,0.0
+bets: 100.0,1200.0
+actions: 0
+rewards:0.0
+
+player: 0
+private, public cards: 7.0,4.0
+bets: 100.0,100.0
+actions: 2
+rewards:-200.0
+
+player: 1
+private, public cards: 7.0,4.0
+bets: 300.0,100.0
+actions: 3
+rewards:1300.0
+
+player: 0
+private, public cards: 7.0,4.0
+bets: 300.0,1200.0
+actions: 0
+rewards:0.0
+
+player: 0
+private, public cards: 7.0,2.0
+bets: 100.0,100.0
+actions: 3
+rewards:200.0
+
+player: 1
+private, public cards: 7.0,2.0
+bets: 1200.0,100.0
+actions: 1
+rewards:1300.0
+
+player: 0
+private, public cards: 0.0,4.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 1
+private, public cards: 0.0,4.0
+bets: 100.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 0
+private, public cards: 0.0,4.0
+bets: 100.0,1200.0
+actions: 1
+rewards:1300.0
+
+player: 0
+private, public cards: 1.0,0.0
+bets: 100.0,100.0
+actions: 3
+rewards:-1100.0
+
+player: 1
+private, public cards: 1.0,0.0
+bets: 1200.0,100.0
+actions: 1
+rewards:1300.0
+
+player: 0
+private, public cards: 4.0,3.0
+bets: 100.0,100.0
+actions: 1
+rewards:200.0
+
+player: 1
+private, public cards: 4.0,3.0
+bets: 100.0,100.0
+actions: 1
+rewards:0.0
+
+player: 0
+private, public cards: 4.0,3.0Ah
+bets: 100.0,100.0
+actions: 2
+rewards:-200.0
+

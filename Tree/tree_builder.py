@@ -260,6 +260,7 @@ class PokerTreeBuilder:
 #          print len(children)
       current_node.actions= []
       for i in range(len(children)):   
+#        assert(children[i].node_id != 857)
         children[i].parent = current_node
         self._build_tree_dfs(children[i])
         depth = max(depth, children[i].depth)
@@ -365,12 +366,13 @@ class PokerTreeBuilder:
 #      print(return_tensor)
       return return_tensor
       
-    def acc_node(self, tree_root, acc_list):
+    def acc_node(self, tree_root, acc_node, acc_list):
+        acc_node[str(tree_root.node_id)] = tree_root
         acc_list.append(tree_root.node_id)
         if tree_root.terminal:
             return
         for child in tree_root.children:
-            self.acc_node(child, acc_list)
+            self.acc_node(child, acc_node, acc_list)
          
          
          

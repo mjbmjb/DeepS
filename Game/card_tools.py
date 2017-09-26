@@ -57,7 +57,7 @@ class card_tools:
     # hands have uniform probability
     def get_uniform_range(self, board):
         out = self.get_possible_hand_indexes(board)
-        out.div(out.sum())  
+        out.div_(out.sum())  
         return out
     
     
@@ -74,7 +74,7 @@ class card_tools:
       
         out = torch.rand(gen, game_settings.card_count).typeAs(arguments.Tensor())
         out.cmul(self.get_possible_hand_indexes(board))
-        out.div(out.sum())
+        out.div_(out.sum())
         
         return out
     
@@ -171,7 +171,7 @@ class card_tools:
         #return zero range if it all collides with board (avoid div by zero)
         if out.sum() == 0:
             return out
-        out.div(out.sum())
+        out.div_(out.sum())
         return out
     
     def hand_to_tensor(self, hand):

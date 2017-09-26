@@ -15,6 +15,7 @@ import torch
 import numpy as np
 import Settings.arguments as arguments
 import Settings.constants as constants
+import Settings.game_settings as game_settings
 from itertools import count
 from nn.env import Env
 from nn.dqn import DQN
@@ -22,11 +23,13 @@ from nn.dqn import DQNOptim
 from nn.table_sl import TableSL
 from nn.state import GameState
 from Tree.tree_builder import PokerTreeBuilder
+from Tree.Tests.test_tree_values import ValuesTester
 from collections import namedtuple
 builder = PokerTreeBuilder()
 
 num_episodes = 10
 env = Env()
+value_tester = ValuesTester()
 
 Agent = namedtuple('Agent',['rl','sl'])
 
@@ -54,6 +57,15 @@ def save_model(episod):
     torch.save(dqn_optim.model.state_dict(), rl_name)
     # 2.0 save the memory of DQN
     np.save(memory_name, np.array(dqn_optim.memory.memory))
+
+def save_table_csv(table):
+    with open('../Data/table.csv', 'a') as fout:
+        for i in range(table.size(0)):
+            fout.write(str(table[i].sum()))
+            fout.write(',')
+        fout.write('\n')
+    
+    
 
 
 def get_action(state, flag):
@@ -94,7 +106,7 @@ def main():
         for t in count():
             state_tensor = builder.statenode_to_tensor(state)
             # Select and perform an action
-            assert(state_tensor.size(1) == 28)
+            assert(state_tensor.size(1) == 32)
             
             if flag == 0:
                 # sl
@@ -108,7 +120,7 @@ def main():
             # transform to tensor
             real_next_state_tensor = builder.statenode_to_tensor(real_next_state)
             
-            reward_tensor = arguments.Tensor([reward * 2.0 / arguments.stack])
+            reward_tensor = arguments.Tensor([reward])
 #            reward_tensor = arguments.Tensor([reward])
             action_tensor = action
             
@@ -134,14 +146,14 @@ def main():
 #                    dqn_optim.plot_error_vis(i_episode)
             
             if done:
-#                if(i_episode % 100 == 0):
-#                    dqn_optim.plot_error()
+                if(i_episode % 100 == 0):
+                    dqn_optim.plot_error_vis(i_episode)
                 if(i_episode % arguments.save_epoch == 0):
                     save_model(i_episode)
-                    
+                    value_tester.test(table_sl.s_a_table.clone(), i_episode)
+#                    save_table_csv(table_sl.s_a_table)
 #                dqn_optim.episode_durations.append(t + 1)
 #                dqn_optim.plot_durations()
-
                 break
             
             

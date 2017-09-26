@@ -36,7 +36,7 @@ class TreeVisualiser:
     # @param[opt] labels a list of labels for the elements of the tensor
     # @return a string representation of the tensor
     # @local
-    def add_tensor(self, tensor, name, formatstr = '{:.2f}'):
+    def add_tensor(self, tensor, name, formatstr = '{:.2f}',labels = None):
       
       out = ''
       if name != "":
@@ -44,8 +44,8 @@ class TreeVisualiser:
     
       for i in range(tensor.size(0)):
         for j in range(tensor.size(1)):
-#        if labels:
-#          out = out + labels[i] + ":"
+            if labels:
+                out = out + labels[j] + ":"
         
             out = out + formatstr.format(tensor[i][j]) + ", "
         out = out + "| : "
@@ -79,6 +79,7 @@ class TreeVisualiser:
     def add_range_info(self, node):
       out = ""
       
+#      if(node.ranges_absolute.dim() != 0): 
       if(node.ranges_absolute.dim() != 0): 
         out = out + self.add_tensor(node.ranges_absolute, 'abs_range')
     
@@ -101,7 +102,7 @@ class TreeVisualiser:
       out = {}
       
       #1.0 label
-      out['label'] = '"<f0>' + str(node.current_player) + '|<f1>' + str(node.node_id)
+      out['label'] = '"<f0>' + str(node.current_player) + '|<f1>' + str(node.node_id) + '*'
       
       if node.terminal:
         if node.type == constants.node_types.terminal_fold:
@@ -130,13 +131,13 @@ class TreeVisualiser:
     
       out['label'] = out['label'] + self.add_range_info(node)  
 #      
-#      if node.cfv_infset != None:
-#        out['label'] = out['label'] +  '| cfv1: ' + node.cfv_infset[1]
-#        out['label'] = out['label'] +  '| cfv2: ' + node.cfv_infset[2]
-#        out['label'] = out['label'] +  '| cfv_br1: ' + node.cfv_br_infset[1]
-#        out['label'] = out['label'] +  '| cfv_br2: ' + node.cfv_br_infset[2]
-#        out['label'] = out['label'] +  '| epsilon1: ' + node.epsilon[1]
-#        out['label'] = out['label'] +  '| epsilon2: ' + node.epsilon[2]    
+      if node.cfv_infset.dim() != 0:
+        out['label'] = out['label'] +  '| cfv1: ' + str(node.cfv_infset[0])
+        out['label'] = out['label'] +  '| cfv2: ' + str(node.cfv_infset[1])
+        out['label'] = out['label'] +  '| cfv_br1: ' + str(node.cfv_br_infset[0])
+        out['label'] = out['label'] +  '| cfv_br2: ' + str(node.cfv_br_infset[1])
+        out['label'] = out['label'] +  '| epsilon1: ' + str(node.epsilon[0])
+        out['label'] = out['label'] +  '| epsilon2: ' + str(node.epsilon[1])  
 #      
 #      if node.has_key('lookahead_coordinates'):
 #        out['label'] = out['label'] +  '| COORDINATES '
@@ -179,7 +180,7 @@ class TreeVisualiser:
       
       assert(child_id != -1)
       #TODO:strategy
-#      out.strategy = self.add_tensor(node.strategy[child_id], nil, "%.2f", card_to_string.card_to_string_table)
+      out['strategy'] = self.add_tensor(node.strategy[child_id].view(1,-1), "", labels=card_to_string.card_to_string_table)
       
       self.edge_to_graphviz_counter = self.edge_to_graphviz_counter + 1
       return out
@@ -232,10 +233,9 @@ class TreeVisualiser:
           
       for i in range(len(edges)):
         edge = edges[i]
-#        edge_text = edge['id_from'] + ':f0 -> ' + edge['id_to'] + ':f0 [ id = ' + edge['id'] + ' label = "' + edge.strategy + '"];'
-        edge_text = str(edge['id_from']) + ':f0 -> ' + str(edge['id_to']) + ':f0 [ id = ' + str(edge['id']) + ' label = "' + '"];'
-        out = out + edge_text
+        edge_text = str(edge['id_from']) + ':f0 -> ' + str(edge['id_to']) + ':f0 [ id = ' + str(edge['id']) + ' label = "' + edge['strategy'] + '"];'
         
+        out = out + edge_text
       out = out + '}'
         
       #write into:t file

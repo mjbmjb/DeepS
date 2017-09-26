@@ -53,15 +53,15 @@ def dfs_fill_table(node, table, dqnmodel, builder):
         dfs_fill_table(child,table, dqnmodel, builder)
 
 
-model_num = 10000
+model_num = 20000
 
 builder = PokerTreeBuilder()
 
 params = {}
 
 params['root_node'] = {}
-params['root_node']['board'] = card_to_string.string_to_board('As')
-params['root_node']['street'] = 1
+params['root_node']['board'] = card_to_string.string_to_board('')
+params['root_node']['street'] = 0
 params['root_node']['current_player'] = constants.players.P1
 params['root_node']['bets'] = arguments.Tensor([100, 100])
 params['limit_to_street'] = False
@@ -75,7 +75,15 @@ if torch.cuda.is_available():
 
 dqn.load_state_dict(torch.load('/home/mjb/Nutstore/deepStack/Data/Model/Iter:' + str(model_num) + '.rl'))
 
-dfs_fill_table(tree, table_sl, dqn, builder)
+#dfs_fill_table(tree, table_sl, dqn, builder)
 
-visualiser = TreeVisualiser()
-visualiser.graphviz(tree,"table_sl:" + str(model_num))
+acc_list = []
+acc_node = {}
+builder.acc_node(tree, acc_node, acc_list)
+state = GameState()
+state.private = [arguments.Tensor([2]),arguments.Tensor([2])]
+state.node = acc_node['764']
+print(dqn(Variable(builder.statenode_to_tensor(state))))
+
+#visualiser = TreeVisualiser()
+#visualiser.graphviz(tree,"table_sl:" + str(model_num))
